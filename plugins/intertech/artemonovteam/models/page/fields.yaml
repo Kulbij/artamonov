@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Название страницы
+        type: text
+        span: left
+        placeholder: Укажите название для страницы
+        comment: Укажите название для страницы
+
+    cms_page:
+        label: Страницы CMS
+        span: auto
+        placeholder: Выберите страницу CMS
+        type: dropdown
+        comment: Привяжите вашу страницу к следующим CMS страницам
+
+    slug:
+        label: Ссылка
+        required: true
+        disabled: true
+        span: left
+        preset:
+            field: name
+            type: slug
+
+    is_enabled:
+        label: Видимость
+        type: switch
+        span: right
+        comment: Отображать страницу на сайте
+        default: true

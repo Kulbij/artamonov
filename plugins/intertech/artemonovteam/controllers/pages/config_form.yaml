@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Страницы
+
+# Model Form Field configuration
+form: $/intertech/artemonovteam/models/page/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Artemonovteam\Models\Page
+
+# Default redirect location
+defaultRedirect: intertech/artemonovteam/pages
+
+# Create page
+create:
+    title: Создание страницы
+    redirect: intertech/artemonovteam/pages/update/:id
+    redirectClose: intertech/artemonovteam/pages
+
+# Update page
+update:
+    title: Редактирование страницы
+    redirect: intertech/artemonovteam/pages
+    redirectClose: intertech/artemonovteam/pages
+
+# Preview page
+preview:
+    title: Просмотр страницы

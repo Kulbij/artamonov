@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Tag
+
+# Model Form Field configuration
+form: $/intertech/artemonovteam/models/tag/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Artemonovteam\Models\Tag
+
+# Default redirect location
+defaultRedirect: intertech/artemonovteam/tags
+
+# Create page
+create:
+    title: Create Tag
+    redirect: intertech/artemonovteam/tags/update/:id
+    redirectClose: intertech/artemonovteam/tags
+
+# Update page
+update:
+    title: Edit Tag
+    redirect: intertech/artemonovteam/tags
+    redirectClose: intertech/artemonovteam/tags
+
+# Preview page
+preview:
+    title: Preview Tag

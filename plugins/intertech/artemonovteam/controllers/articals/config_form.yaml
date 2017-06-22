@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Artical
+
+# Model Form Field configuration
+form: $/intertech/artemonovteam/models/artical/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Artemonovteam\Models\Artical
+
+# Default redirect location
+defaultRedirect: intertech/artemonovteam/articals
+
+# Create page
+create:
+    title: Create Artical
+    redirect: intertech/artemonovteam/articals/update/:id
+    redirectClose: intertech/artemonovteam/articals
+
+# Update page
+update:
+    title: Edit Artical
+    redirect: intertech/artemonovteam/articals
+    redirectClose: intertech/artemonovteam/articals
+
+# Preview page
+preview:
+    title: Preview Artical

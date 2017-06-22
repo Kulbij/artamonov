@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Category
+
+# Model Form Field configuration
+form: $/intertech/artemonovteam/models/category/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Artemonovteam\Models\Category
+
+# Default redirect location
+defaultRedirect: intertech/artemonovteam/categories
+
+# Create page
+create:
+    title: Create Category
+    redirect: intertech/artemonovteam/categories/update/:id
+    redirectClose: intertech/artemonovteam/categories
+
+# Update page
+update:
+    title: Edit Category
+    redirect: intertech/artemonovteam/categories
+    redirectClose: intertech/artemonovteam/categories
+
+# Preview page
+preview:
+    title: Preview Category
