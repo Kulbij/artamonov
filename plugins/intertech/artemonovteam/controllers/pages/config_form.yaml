@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Страницы
+name: Страница
 
 # Model Form Field configuration
 form: $/intertech/artemonovteam/models/page/fields.yaml

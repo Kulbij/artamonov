@@ -10,3 +10,7 @@ columns:
     is_enabled:
         label: Видимость
         type: switch
+
+    sort_order:
+        label: Позиция
+        searchable: true

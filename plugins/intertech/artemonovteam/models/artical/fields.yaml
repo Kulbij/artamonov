@@ -3,6 +3,50 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    title:
+        label: Название
+        type: text
+        span: left
+        placeholder: Введите название
+        comment: Название для поста
+
+    slug:
+        label: Ссылка
+        required: true
+        span: right
+        preset:
+            field: title
+            type: slug
+
+    is_enabled:
+        label: Видимость
+        type: switch
+        span: left
+        comment: Отображать пост в блоге
+        default: true
+
+    video:
+        label: Видео
+        type: textarea
+        span: right
+        size: middle
+        placeholder: Введите HTM-код (Youtube)
+        comment: Укажите HTM-код (Youtube)
+
+    short_text:
+        label: Краткий текст
+        type: textarea
+        size: middle
+        placeholder: Введите краткий текст
+        comment: Краткий текст будет отображатся в списке постов
+
+    description:
+        label: Описание
+        type: richeditor
+        comment: Описание к посту
+
+    image:
+        label: Изображение
+        type: fileupload
+        mode: image
+        tab: Управление

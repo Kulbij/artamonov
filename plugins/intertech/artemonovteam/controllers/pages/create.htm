@@ -33,7 +33,7 @@
                     Создать и закрыть
                 </button>
                 <span class="btn-text">
-                    или <a href="<?= Backend::url('intertech/artemonovteam/pages') ?>">Отмена</a>
+                    <?= e(trans('backend::lang.form.or')) ?> <a href="<?= Backend::url('intertech/artemonovteam/pages') ?>"><?= e(trans('backend::lang.form.cancel')) ?></a>
                 </span>
             </div>
         </div>

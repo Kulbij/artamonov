@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Artical
+name: Блог
 
 # Model Form Field configuration
 form: $/intertech/artemonovteam/models/artical/fields.yaml
@@ -16,16 +16,16 @@ defaultRedirect: intertech/artemonovteam/articals
 
 # Create page
 create:
-    title: Create Artical
+    title: Создание поста
     redirect: intertech/artemonovteam/articals/update/:id
     redirectClose: intertech/artemonovteam/articals
 
 # Update page
 update:
-    title: Edit Artical
+    title: Редактирование поста
     redirect: intertech/artemonovteam/articals
     redirectClose: intertech/artemonovteam/articals
 
 # Preview page
 preview:
-    title: Preview Artical
+    title: Просмотр поста

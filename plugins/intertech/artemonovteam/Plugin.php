@@ -92,9 +92,16 @@ class Plugin extends PluginBase
                     'pages' => [
                         'label'       => 'Страницы',
                         'url'         => Backend::url('intertech/artemonovteam/pages'),
-                        'icon'        => 'icon-phone',
+                        'icon'        => 'icon-square',
                         'permissions' => ['intertech.artemonovteam.*'],
                         'order'       => 100,
+                    ],
+                    'articals' => [
+                        'label'       => 'Блог',
+                        'url'         => Backend::url('intertech/artemonovteam/articals'),
+                        'icon'        => 'icon-bars',
+                        'permissions' => ['intertech.artemonovteam.*'],
+                        'order'       => 200,
                     ],
                 ],
             ],
