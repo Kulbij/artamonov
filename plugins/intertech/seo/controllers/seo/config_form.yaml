@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Seo
+
+# Model Form Field configuration
+form: $/intertech/seo/models/seo/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Seo\Models\Seo
+
+# Default redirect location
+defaultRedirect: intertech/seo/seo
+
+# Create page
+create:
+    title: Создание Seo
+    redirect: intertech/seo/seo/update/:id
+    redirectClose: intertech/seo/seo
+
+# Update page
+update:
+    title: Редактирование Seo
+    redirect: intertech/seo/seo
+    redirectClose: intertech/seo/seo
+
+# Preview page
+preview:
+    title: Просмотр Seo

@@ -3,6 +3,10 @@
 # ===================================
 
 columns:
-    id:
-        label: ID
+    name:
+        label: Название
         searchable: true
+
+    is_enabled:
+        label: Видимость
+        type: switch

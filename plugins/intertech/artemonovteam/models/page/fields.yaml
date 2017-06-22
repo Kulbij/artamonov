@@ -20,7 +20,7 @@ fields:
     slug:
         label: Ссылка
         required: true
-        disabled: true
+        hidden: true
         span: left
         preset:
             field: name

@@ -1,0 +1,52 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    defaultTab: Meta
+    fields:
+        title:
+            label: Title
+            type: text
+            tab: Meta
+
+        description:
+            label: Description
+            size: small
+            span: left
+            type: textarea
+            tab: Meta
+
+        keywords:
+            label: Keywords
+            size: small
+            span: right
+            type: textarea
+            tab: Meta
+
+        additional_tags:
+            label: Дополнительные теги
+            size: small
+            span: left
+            type: textarea
+            tab: Meta
+
+        og_title:
+            label: OG Title
+            type: text
+            span: left
+            tab: Open Graph
+
+        og_image:
+            label: OG Image
+            type: fileupload
+            mode: image
+            span: right
+            tab: Open Graph
+
+        og_description:
+            label: OG Description
+            size: small
+            type: textarea
+            span: left
+            tab: Open Graph

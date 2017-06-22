@@ -1,0 +1,66 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    defaultTab: Meta
+    fields:
+        url_mask:
+            label: URL маска
+            comment: 'Шаблон с возможностью использования маски. Например: /, /*, /products, /products/*, /products/some-product-href'
+            span: left
+            type: text
+            tab: Meta
+
+        title:
+            label: Title
+            span: right
+            type: text
+            tab: Meta
+
+        description:
+            label: Description
+            size: small
+            span: left
+            type: textarea
+            tab: Meta
+
+        keywords:
+            label: Keywords
+            size: small
+            span: right
+            type: textarea
+            tab: Meta
+
+        additional_tags:
+            label: Дополнительные теги
+            size: small
+            span: left
+            type: textarea
+            tab: Meta
+
+        canonical:
+            label: Canonical
+            span: right
+            type: text
+            tab: Meta
+
+        og_title:
+            type: text
+            span: left
+            label: OG Title
+            tab: Open Graph
+
+        og_image:
+            label: OG Image
+            type: fileupload
+            mode: image
+            span: right
+            tab: Open Graph
+
+        og_description:
+            label: OG Description
+            size: small
+            type: textarea
+            span: left
+            tab: Open Graph
