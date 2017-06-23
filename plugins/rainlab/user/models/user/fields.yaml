@@ -70,6 +70,10 @@ tabs:
             type: relation
             emptyOption: rainlab.user::lang.user.empty_groups
 
+        programs:
+            type: relation
+            tab: Программы
+
 secondaryTabs:
     fields:
 
