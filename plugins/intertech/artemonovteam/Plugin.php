@@ -124,6 +124,13 @@ class Plugin extends PluginBase
                         'permissions' => ['intertech.artemonovteam.*'],
                         'order'       => 500,
                     ],
+                    'trainers' => [
+                        'label'       => 'Тренеры',
+                        'url'         => Backend::url('intertech/artemonovteam/trainers'),
+                        'icon'        => 'icon-users',
+                        'permissions' => ['intertech.artemonovteam.*'],
+                        'order'       => 500,
+                    ],
                 ],
             ],
         ];

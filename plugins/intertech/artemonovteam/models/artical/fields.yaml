@@ -25,10 +25,13 @@ fields:
         comment: Отображать пост в блоге
         default: true
 
-    # tags:
-    #     label: Теги
-    #     type: tags
-    #     span: right
+    tags:
+        label: Теги
+        type: taglist
+        mode: relation
+        nameFrom: name
+        customTags: true
+        span: right
 
     video:
         label: Видео

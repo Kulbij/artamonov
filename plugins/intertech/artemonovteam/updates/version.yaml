@@ -14,3 +14,9 @@
 1.0.6:
     - Create categories table
     - create_programs_table.php
+1.0.7:
+    - Create create artical tag table
+    - create_artical_tag_table.php
+1.0.8:
+    - Create trainers table
+    - create_trainers_table.php

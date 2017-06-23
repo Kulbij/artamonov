@@ -61,12 +61,9 @@ class Artical extends Model
      * @var array Relations
      */
     public $belongsToMany = [
-        // 'tags' => [
-        //     'Intertech\Artemonovteam\Models\Tag',
-        //     'table' => 'intertech_artemonovteam_artical_tag',
-        //     'order' => 'sort_order asc',
-        //     'conditions' => 'is_enabled = 1',
-        // ],
+        'tags' => ['Intertech\Artemonovteam\Models\Tag',
+            'table' => 'intertech_artemonovteam_artical_tag',
+        ],
     ];
     public $attachOne = [
         'image' => 'System\Models\File',

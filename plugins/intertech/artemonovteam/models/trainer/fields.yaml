@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    full_name:
+        label: Имя тренера
+        type: text
+        span: left
+        placeholder: Введите имя тренера
+    
+    is_enabled:
+        label: Отображать
+        type: switch
+        span: right
+        default: true
+        comment: Отображать тренера на сайте
+
+    description:
+        label: Информация о тренере
+        type: textarea
+        placeholder: Введите информацию о тренере
+
+    image:
+        label: Изображение
+        type: fileupload
+        mode: image
+        tab: Управление
+

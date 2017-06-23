@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Тренер
+
+# Model Form Field configuration
+form: $/intertech/artemonovteam/models/trainer/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Artemonovteam\Models\Trainer
+
+# Default redirect location
+defaultRedirect: intertech/artemonovteam/trainers
+
+# Create page
+create:
+    title: Создание тренера
+    redirect: intertech/artemonovteam/trainers/update/:id
+    redirectClose: intertech/artemonovteam/trainers
+
+# Update page
+update:
+    title: Редактирование тренера
+    redirect: intertech/artemonovteam/trainers
+    redirectClose: intertech/artemonovteam/trainers
+
+# Preview page
+preview:
+    title: Просмотр тренера
