@@ -117,6 +117,13 @@ class Plugin extends PluginBase
                         'permissions' => ['intertech.artemonovteam.*'],
                         'order'       => 400,
                     ],
+                    'programs' => [
+                        'label'       => 'Програмы',
+                        'url'         => Backend::url('intertech/artemonovteam/programs'),
+                        'icon'        => 'icon-list',
+                        'permissions' => ['intertech.artemonovteam.*'],
+                        'order'       => 500,
+                    ],
                 ],
             ],
         ];

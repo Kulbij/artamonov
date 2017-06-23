@@ -7,7 +7,7 @@ fields:
         label: Название
         type: text
         span: left
-        placeholder: Введите название категории
+        placeholder: Введите название программы
 
     slug:
         label: Ссылка
@@ -21,22 +21,18 @@ fields:
         label: Видимость
         type: switch
         span: left
-        comment: Отображать категорию на сайте
+        comment: Отображать программу на сайте
         default: true
 
-    video:
-        label: Видео
-        type: textarea
-        span: left
-        size: middle
-        placeholder: Введите HTM-код (Youtube)
-        comment: Укажите HTM-код (Youtube)
+    category:
+        label: Категория
+        type: relation
+        span: right
 
     short_text:
         label: Краткий текст
         type: textarea
         size: middle
-        span: right
         placeholder: Введите краткий текст
 
     description:

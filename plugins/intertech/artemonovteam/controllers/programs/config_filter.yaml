@@ -1,0 +1,15 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+scopes:
+
+    enabled:
+        label: Видимые
+        type: checkbox
+        conditions: is_enabled = 1
+
+    categories:
+        label: Категории
+        modelClass: Intertech\Artemonovteam\Models\Category
+        nameFrom: name
+        conditions: category_id in (:filtered)

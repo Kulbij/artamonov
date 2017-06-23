@@ -3,16 +3,19 @@
 # ===================================
 
 # Model List Column configuration
-list: $/intertech/artemonovteam/models/category/columns.yaml
+list: $/intertech/artemonovteam/models/program/columns.yaml
 
 # Model Class name
-modelClass: Intertech\Artemonovteam\Models\Category
+modelClass: Intertech\Artemonovteam\Models\Program
+
+# List filter configuration
+filter: config_filter.yaml
 
 # List Title
-title: Просмотр категорий
+title: Управление программами
 
 # Link URL for each record
-recordUrl: intertech/artemonovteam/categories/update/:id
+recordUrl: intertech/artemonovteam/programs/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

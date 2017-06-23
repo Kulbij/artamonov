@@ -11,3 +11,6 @@
 1.0.5:
      - Create tags table
      - create_tags_table.php
+1.0.6:
+    - Create categories table
+    - create_programs_table.php

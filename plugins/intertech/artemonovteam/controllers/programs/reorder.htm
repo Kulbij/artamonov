@@ -1,0 +1,8 @@
+<?php Block::put('breadcrumb') ?>
+<ul>
+    <li><a href="<?= Backend::url('intertech/artemonovteam/programs') ?>">Теги</a></li>
+    <li>Сортировка программ</li>
+</ul>
+<?php Block::endPut() ?>
+
+<?= $this->reorderRender() ?>

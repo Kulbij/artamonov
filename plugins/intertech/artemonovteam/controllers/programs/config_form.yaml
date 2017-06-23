@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Программа
+
+# Model Form Field configuration
+form: $/intertech/artemonovteam/models/program/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Artemonovteam\Models\Program
+
+# Default redirect location
+defaultRedirect: intertech/artemonovteam/programs
+
+# Create page
+create:
+    title: Создание программы
+    redirect: intertech/artemonovteam/programs/update/:id
+    redirectClose: intertech/artemonovteam/programs
+
+# Update page
+update:
+    title: Редавктирование программы
+    redirect: intertech/artemonovteam/programs
+    redirectClose: intertech/artemonovteam/programs
+
+# Preview page
+preview:
+    title: Просмотр программы
