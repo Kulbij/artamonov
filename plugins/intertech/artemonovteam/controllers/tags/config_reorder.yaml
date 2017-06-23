@@ -1,0 +1,17 @@
+# ===================================
+#  Reorder Behavior Config
+# ===================================
+
+# Reorder Title
+title: Сортировка тегов
+
+# Attribute name
+nameFrom: name
+
+# Model Class name
+modelClass: Intertech\Artemonovteam\Models\Tag
+
+# Toolbar widget configuration
+toolbar:
+    # Partial for toolbar buttons
+    buttons: reorder_toolbar

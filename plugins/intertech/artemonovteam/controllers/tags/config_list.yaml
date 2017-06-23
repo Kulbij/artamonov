@@ -9,7 +9,7 @@ list: $/intertech/artemonovteam/models/tag/columns.yaml
 modelClass: Intertech\Artemonovteam\Models\Tag
 
 # List Title
-title: Manage Tags
+title: Управление тегами
 
 # Link URL for each record
 recordUrl: intertech/artemonovteam/tags/update/:id
@@ -27,9 +27,9 @@ showSetup: true
 showSorting: true
 
 # Default sorting column
-# defaultSort:
-#     column: created_at
-#     direction: desc
+defaultSort:
+    column: sort_order
+    direction: asc
 
 # Display checkboxes next to each record
 # showCheckboxes: true

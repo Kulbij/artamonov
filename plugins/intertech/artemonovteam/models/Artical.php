@@ -60,15 +60,15 @@ class Artical extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
-    public $hasMany = [];
-    public $belongsTo = [];
-    public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
+    public $belongsToMany = [
+        // 'tags' => [
+        //     'Intertech\Artemonovteam\Models\Tag',
+        //     'table' => 'intertech_artemonovteam_artical_tag',
+        //     'order' => 'sort_order asc',
+        //     'conditions' => 'is_enabled = 1',
+        // ],
+    ];
     public $attachOne = [
         'image' => 'System\Models\File',
     ];
-    public $attachMany = [];
 }

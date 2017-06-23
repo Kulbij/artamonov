@@ -6,3 +6,14 @@ columns:
     id:
         label: ID
         searchable: true
+
+    name:
+        label: Название
+        searchable: true
+
+    is_enabled:
+        label: Видимость
+        type: switch
+
+    sort_order:
+        label: Позиция

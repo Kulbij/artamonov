@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Category
+name: Категория
 
 # Model Form Field configuration
 form: $/intertech/artemonovteam/models/category/fields.yaml
@@ -16,16 +16,16 @@ defaultRedirect: intertech/artemonovteam/categories
 
 # Create page
 create:
-    title: Create Category
+    title: Создание категории
     redirect: intertech/artemonovteam/categories/update/:id
     redirectClose: intertech/artemonovteam/categories
 
 # Update page
 update:
-    title: Edit Category
+    title: Редаветирование категории
     redirect: intertech/artemonovteam/categories
     redirectClose: intertech/artemonovteam/categories
 
 # Preview page
 preview:
-    title: Preview Category
+    title: Просмотр категории

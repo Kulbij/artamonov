@@ -1,16 +1,39 @@
 <?php namespace Intertech\Artemonovteam\Models;
 
 use Model;
+use October\Rain\Database\Traits\Sortable;
+use Intertech\Artemonovteam\Traits\PageTrait;
+use October\Rain\Database\Traits\Validation;
 
 /**
  * Tag Model
  */
 class Tag extends Model
 {
+    use Validation, Sortable, PageTrait;
+
+    public $implement = [
+        'RainLab.Translate.Behaviors.TranslatableModel'
+    ];
+
+    public $translatable = [
+        'name'
+    ];
+
     /**
      * @var string The database table used by the model.
      */
     public $table = 'intertech_artemonovteam_tags';
+
+    public $timestamps = false;
+
+    public $rules = [
+        'name' => 'required'
+    ];
+
+    public $attributeNames = [
+        'name' => 'Название'
+    ];
 
     /**
      * @var array Guarded fields
@@ -20,7 +43,10 @@ class Tag extends Model
     /**
      * @var array Fillable fields
      */
-    protected $fillable = [];
+    protected $fillable = [
+        'name',
+        'is_enabled'
+    ];
 
     /**
      * @var array Relations

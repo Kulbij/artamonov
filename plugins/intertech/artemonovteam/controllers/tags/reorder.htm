@@ -1,0 +1,8 @@
+<?php Block::put('breadcrumb') ?>
+<ul>
+    <li><a href="<?= Backend::url('intertech/artemonovteam/tags') ?>">Теги</a></li>
+    <li>Сортировка тегов</li>
+</ul>
+<?php Block::endPut() ?>
+
+<?= $this->reorderRender() ?>

@@ -25,10 +25,15 @@ fields:
         comment: Отображать пост в блоге
         default: true
 
+    # tags:
+    #     label: Теги
+    #     type: tags
+    #     span: right
+
     video:
         label: Видео
         type: textarea
-        span: right
+        span: left
         size: middle
         placeholder: Введите HTM-код (Youtube)
         comment: Укажите HTM-код (Youtube)
@@ -37,6 +42,7 @@ fields:
         label: Краткий текст
         type: textarea
         size: middle
+        span: right
         placeholder: Введите краткий текст
         comment: Краткий текст будет отображатся в списке постов
 

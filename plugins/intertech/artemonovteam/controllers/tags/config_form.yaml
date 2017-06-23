@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Tag
+name: Тег
 
 # Model Form Field configuration
 form: $/intertech/artemonovteam/models/tag/fields.yaml
@@ -16,16 +16,16 @@ defaultRedirect: intertech/artemonovteam/tags
 
 # Create page
 create:
-    title: Create Tag
+    title: Создание тега
     redirect: intertech/artemonovteam/tags/update/:id
     redirectClose: intertech/artemonovteam/tags
 
 # Update page
 update:
-    title: Edit Tag
+    title: Редавктирование тега
     redirect: intertech/artemonovteam/tags
     redirectClose: intertech/artemonovteam/tags
 
 # Preview page
 preview:
-    title: Preview Tag
+    title: Просмотр тега

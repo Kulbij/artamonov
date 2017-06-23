@@ -3,6 +3,16 @@
 # ===================================
 
 fields:
-    id:
-        label: ID
-        disabled: true
+    name:
+        label: Название
+        type: text
+        span: left
+        placeholder: Введите название
+        comment: Название для тега
+
+    is_enabled:
+        label: Видимость
+        type: switch
+        span: right
+        comment: Отображать тег
+        default: true

@@ -9,7 +9,7 @@ list: $/intertech/artemonovteam/models/category/columns.yaml
 modelClass: Intertech\Artemonovteam\Models\Category
 
 # List Title
-title: Manage Categories
+title: Просмотр категорий
 
 # Link URL for each record
 recordUrl: intertech/artemonovteam/categories/update/:id
@@ -27,9 +27,9 @@ showSetup: true
 showSorting: true
 
 # Default sorting column
-# defaultSort:
-#     column: created_at
-#     direction: desc
+defaultSort:
+    column: sort_order
+    direction: asc
 
 # Display checkboxes next to each record
 # showCheckboxes: true

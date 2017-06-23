@@ -1,0 +1,8 @@
+<?php Block::put('breadcrumb') ?>
+<ul>
+    <li><a href="<?= Backend::url('intertech/artemonovteam/categories') ?>">Страницы</a></li>
+    <li>Сортировка категорий</li>
+</ul>
+<?php Block::endPut() ?>
+
+<?= $this->reorderRender() ?>
