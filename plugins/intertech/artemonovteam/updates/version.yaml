@@ -20,3 +20,6 @@
 1.0.8:
     - Create trainers table
     - create_trainers_table.php
+1.0.9:
+    - Create program user table
+    - create_program_user_table.php

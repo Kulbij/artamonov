@@ -4,11 +4,11 @@
 
 fields:
 
-    name:
+    first_name:
         label: rainlab.user::lang.user.name
         span: auto
 
-    surname:
+    last_name:
         label: rainlab.user::lang.user.surname
         span: auto
 
