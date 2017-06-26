@@ -1,0 +1,10 @@
+fields:
+    api_key:
+        label: MailChimp API key
+        span: left
+        commentAbove: Ввести API Key
+
+    list:
+        label: List ID
+        span: right
+        commentAbove: Введите ID Листа
