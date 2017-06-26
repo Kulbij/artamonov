@@ -1,0 +1,29 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        invisible: true
+
+    full_name:
+        label: Полное имя
+        searchable: true
+
+    email:
+        label: Email
+        searchable: true
+
+    secret_key:
+        label: Секретный ключ
+
+    created_at:
+        label: Дата создания
+        type: datetime
+
+    updated_at:
+        label: Последнее обновление
+        type: datetime
+        invisible: true

@@ -1,0 +1,28 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    template_hint:
+        type: hint
+        path: $/intertech/subscribe/models/settings/_template_hint.htm
+
+    subscribe_template:
+        label: Шаблон подписки
+        comment: Шаблон сообщения, отправляемого после подписки
+        type: dropdown
+        options: listTemplates
+        default: intertech.subscribe::mail.subscribe
+
+    unsubscribe_template:
+        label: Шаблон отписки
+        comment: Шаблон сообщения, отправляемого после отписки
+        type: dropdown
+        options: listTemplates
+        default: intertech.subscribe::mail.unsubscribe
+
+    active_template:
+        label: Шаблон рассылки
+        comment: Шаблон сообщения, используемого для рассылки
+        type: dropdown
+        default: intertech.subscribe::mail.active

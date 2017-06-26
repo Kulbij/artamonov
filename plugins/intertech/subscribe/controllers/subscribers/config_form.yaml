@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Подписчик
+
+# Model Form Field configuration
+form: $/intertech/subscribe/models/subscriber/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Subscribe\Models\Subscriber
+
+# Default redirect location
+defaultRedirect: intertech/subscribe/subscribers
+
+# Create page
+create:
+    title: Создание подписчика
+    redirect: intertech/subscribe/subscribers/update/:id
+    redirectClose: intertech/subscribe/subscribers
+
+# Update page
+update:
+    title: Редактирование подписчика
+    redirect: intertech/subscribe/subscribers
+    redirectClose: intertech/subscribe/subscribers
+
+# Preview page
+preview:
+    title: Предпросмотр подписчика

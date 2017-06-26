@@ -1,0 +1,32 @@
+subject = "Вы успешно отписались от рассылки"
+layout = ""
+==
+<html>
+    <head>
+        <meta charset="utf-8">
+        <style type="text/css">
+            @media only screen and (max-width:580px){
+                .mobile-padding {
+                    padding-left: 10px !important;
+                    padding-right: 10px !important;
+                }
+                .mobile-header-area {
+                    padding-right: 10px !important;
+                }
+                .mobile-header-logo {
+                    margin-left: 10px !important;
+                }
+                img {
+                    max-width: 100%;
+                    height: auto !important;
+                }
+            }
+        </style>
+    </head>
+    <body style="padding: 0; margin: 0">
+        Message
+        <div>
+            Что-бы отписаться от обновлений, перейдите по этой <a href="{{ url() }}/subscribers/unsubscribe/{{ user.secret_key }}">ссылке</a>
+        </div>
+    </body>
+</html>

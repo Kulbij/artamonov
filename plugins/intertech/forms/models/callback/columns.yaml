@@ -1,0 +1,30 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        invisible: true
+
+    name:
+        label: Имя
+        searchable: true
+
+    phone:
+        label: Телефон
+        searchable: true
+
+    convenient_time:
+        label: Удобное время
+        searchable: true
+
+    created_at:
+        label: Дата создания
+        type: datetime
+
+    updated_at:
+        label: Последнее обновление
+        type: datetime
+        invisible: true

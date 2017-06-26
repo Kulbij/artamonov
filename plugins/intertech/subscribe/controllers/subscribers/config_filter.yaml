@@ -1,0 +1,15 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    types:
+        label: Тип
+        modelClass: Intertech\Subscribe\Models\Subscriber
+        conditions: type in (:filtered)
+        options: getTypeOptions
+
+
+
+

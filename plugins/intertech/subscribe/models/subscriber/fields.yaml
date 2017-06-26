@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    full_name:
+        label: Полное имя
+        type: text
+        span: left
+
+    email:
+        label: Email
+        type: text
+        span: right
+
+    secret_key:
+        label: Секретный ключ
+        type: text
+        readOnly: true

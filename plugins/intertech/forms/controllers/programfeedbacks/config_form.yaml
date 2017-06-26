@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Program Feedback
+
+# Model Form Field configuration
+form: $/intertech/forms/models/programfeedback/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Forms\Models\ProgramFeedback
+
+# Default redirect location
+defaultRedirect: intertech/forms/programfeedbacks
+
+# Create page
+create:
+    title: Create Program Feedback
+    redirect: intertech/forms/programfeedbacks/update/:id
+    redirectClose: intertech/forms/programfeedbacks
+
+# Update page
+update:
+    title: Edit Program Feedback
+    redirect: intertech/forms/programfeedbacks
+    redirectClose: intertech/forms/programfeedbacks
+
+# Preview page
+preview:
+    title: Preview Program Feedback

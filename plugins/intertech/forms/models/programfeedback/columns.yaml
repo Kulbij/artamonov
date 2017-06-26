@@ -1,0 +1,41 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    id:
+        label: ID
+        searchable: true
+        invisible: true
+
+    full_name:
+        label: Полное имя
+        searchable: true
+  
+    phone:
+        label: Телефон
+        searchable: true
+
+    email:
+        label: Email
+        searchable: true
+
+    message:
+        label: Сообщение
+        select: left(message, 100)
+        searchable: true
+
+    program:
+        label: Програма
+        relation: program
+        select: name
+        nameFrom: name
+
+    created_at:
+        label: Дата создания
+        type: datetime
+
+    updated_at:
+        label: Последнее обновление
+        type: datetime
+        invisible: true

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Обратная связь
+
+# Model Form Field configuration
+form: $/intertech/forms/models/feedback/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Forms\Models\Feedback
+
+# Default redirect location
+defaultRedirect: intertech/forms/feedbacks
+
+# Create page
+create:
+    title: Создание обратной связи
+    redirect: intertech/forms/feedbacks/update/:id
+    redirectClose: intertech/forms/feedbacks
+
+# Update page
+update:
+    title: Редактирование обратной связи
+    redirect: intertech/forms/feedbacks
+    redirectClose: intertech/forms/feedbacks
+
+# Preview page
+preview:
+    title: Предпросмотр обратной связи

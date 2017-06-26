@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Обратный звонок
+
+# Model Form Field configuration
+form: $/intertech/forms/models/callback/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Forms\Models\Callback
+
+# Default redirect location
+defaultRedirect: intertech/forms/callbacks
+
+# Create page
+create:
+    title: Создание обратного звонка
+    redirect: intertech/forms/callbacks/update/:id
+    redirectClose: intertech/forms/callbacks
+
+# Update page
+update:
+    title: Редактирование обратного звонка
+    redirect: intertech/forms/callbacks
+    redirectClose: intertech/forms/callbacks
+
+# Preview page
+preview:
+    title: Предпросмотр обратного звонка

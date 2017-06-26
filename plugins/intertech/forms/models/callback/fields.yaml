@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Имя
+        type: text
+        span: left
+
+    phone:
+        label: Телефон
+        type: text
+        span: right
+
+    convenient_time:
+        label: Удобное время
+        type: text
+        span: full
+
+    created_at:
+        label: Дата создания
+        type: datepicker
+        span: left
+
+    updated_at:
+        label: Последнее обновление
+        type: datepicker
+        span: right
