@@ -9,7 +9,7 @@ list: $/intertech/forms/models/programfeedback/columns.yaml
 modelClass: Intertech\Forms\Models\ProgramFeedback
 
 # List Title
-title: Manage Program Feedbacks
+title: Управление обратными связями программ
 
 # Link URL for each record
 recordUrl: intertech/forms/programfeedbacks/update/:id
@@ -27,12 +27,12 @@ showSetup: true
 showSorting: true
 
 # Default sorting column
-# defaultSort:
-#     column: created_at
-#     direction: desc
+defaultSort:
+    column: created_at
+    direction: desc
 
 # Display checkboxes next to each record
-# showCheckboxes: true
+showCheckboxes: true
 
 # Toolbar widget configuration
 toolbar:

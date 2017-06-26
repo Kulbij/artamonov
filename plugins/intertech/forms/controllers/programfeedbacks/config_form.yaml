@@ -3,7 +3,7 @@
 # ===================================
 
 # Record name
-name: Program Feedback
+name: Обратная связь программы
 
 # Model Form Field configuration
 form: $/intertech/forms/models/programfeedback/fields.yaml
@@ -16,16 +16,16 @@ defaultRedirect: intertech/forms/programfeedbacks
 
 # Create page
 create:
-    title: Create Program Feedback
+    title: Создание обратной связи программы
     redirect: intertech/forms/programfeedbacks/update/:id
     redirectClose: intertech/forms/programfeedbacks
 
 # Update page
 update:
-    title: Edit Program Feedback
+    title: Редактирование обратной связи программы
     redirect: intertech/forms/programfeedbacks
     redirectClose: intertech/forms/programfeedbacks
 
 # Preview page
 preview:
-    title: Preview Program Feedback
+    title: Просмотр обратной связи программы

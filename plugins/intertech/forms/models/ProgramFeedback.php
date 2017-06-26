@@ -22,6 +22,7 @@ class ProgramFeedback extends Model
         'phone' => 'required',
         'email' => 'required|email',
         'message' => 'required',
+        'program' => 'required',
     ];
 
     public $attributeNames = [
@@ -29,6 +30,7 @@ class ProgramFeedback extends Model
         'phone' => 'Телефон',
         'email' => 'Email',
         'message' => 'Сообщение',
+        'program' => 'Программа',
     ];
 
     /**

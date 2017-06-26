@@ -20,13 +20,11 @@ class Subscriber extends Model
     public $table = 'intertech_subscribe_subscribers';
 
     public $rules = [
-        'email' => 'required|email|unique:intertech_subscribe_subscribers',
-        'type' => 'required',
+        'email' => 'required|email|unique:intertech_subscribe_subscribers'
     ];
 
     public $attributeNames = [
-        'email' => 'Email',
-        'type' => 'Тип',
+        'email' => 'Email'
     ];
 
     public $customMessages = [
@@ -46,8 +44,7 @@ class Subscriber extends Model
     protected $fillable = [
         'full_name',
         'email',
-        'secret_key',
-        'type',
+        'secret_key'
     ];
 
     /**
