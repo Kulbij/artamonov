@@ -55,6 +55,7 @@ class Artical extends Model
         'slug',
         'is_enabled',
         'video',
+        'tag_id',
     ];
 
     /**
@@ -63,9 +64,18 @@ class Artical extends Model
     public $belongsToMany = [
         'tags' => ['Intertech\Artemonovteam\Models\Tag',
             'table' => 'intertech_artemonovteam_artical_tag',
+            'key' => 'artical_id'
         ],
     ];
+
     public $attachOne = [
         'image' => 'System\Models\File',
     ];
+
+    public function scopeFilterTags($query, array $tags)
+    {
+        return $query->whereHas('tags', function ($query) use ($tags) {
+            $query->whereIn('intertech_artemonovteam_tags.id', $tags);
+        });
+    }
 }

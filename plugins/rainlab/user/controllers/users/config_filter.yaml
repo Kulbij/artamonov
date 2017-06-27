@@ -3,7 +3,13 @@
 # ===================================
 
 scopes:
-
+    
+    programs:
+        label: Программы
+        modelClass: Intertech\Artemonovteam\Models\Program
+        nameFrom: name
+        scope: FilterPrograms
+        
     groups:
         # Filter name
         label: rainlab.user::lang.group.label

@@ -8,16 +8,26 @@ columns:
         searchable: true
         invisible: true
 
-    name:
+    first_name:
         label: Имя
+        searchable: true
+
+    last_name:
+        label: Фамилия
         searchable: true
 
     phone:
         label: Телефон
         searchable: true
 
-    convenient_time:
-        label: Удобное время
+    gender:
+        label: Пол
+        type: partial
+        path: ~/plugins/intertech/forms/models/callback/_gender.htm
+
+    message:
+        label: Сообщение
+        select: left(message, 100)
         searchable: true
 
     created_at:

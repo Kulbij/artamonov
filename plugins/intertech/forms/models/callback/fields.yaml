@@ -3,20 +3,32 @@
 # ===================================
 
 fields:
-    name:
+    first_name:
         label: Имя
         type: text
         span: left
 
-    phone:
-        label: Телефон
+    last_name:
+        label: Фамилия
         type: text
         span: right
 
-    convenient_time:
-        label: Удобное время
+    phone:
+        label: Телефон
         type: text
-        span: full
+        span: left
+
+    gender:
+        label: Пол
+        type: dropdown
+        span: right
+        options:
+            0: Мужской
+            1: Женской
+
+    message:
+        label: Сообщение
+        type: textarea
 
     created_at:
         label: Дата создания

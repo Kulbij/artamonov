@@ -2,11 +2,11 @@
 # Filter Scope Definitions
 # ===================================
 scopes:
-    categories:
-        label: Категории
-        modelClass: Intertech\Artemonovteam\Models\Category
+    tags:
+        label: Теги
+        modelClass: Intertech\Artemonovteam\Models\Tag
         nameFrom: name
-        conditions: category_id in (:filtered)
+        scope: FilterTags
 
     created_date:
         label: Дата создания

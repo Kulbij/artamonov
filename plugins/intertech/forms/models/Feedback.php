@@ -44,6 +44,7 @@ class Feedback extends Model
         'phone',
         'email',
         'message',
+        'created_at'
     ];
 
     /**

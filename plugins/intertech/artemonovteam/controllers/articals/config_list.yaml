@@ -11,6 +11,9 @@ modelClass: Intertech\Artemonovteam\Models\Artical
 # List Title
 title: Manage Articals
 
+# List filter configuration
+filter: config_filter.yaml
+
 # Link URL for each record
 recordUrl: intertech/artemonovteam/articals/update/:id
 

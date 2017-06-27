@@ -54,7 +54,11 @@ class Tag extends Model
     public $hasOne = [];
     public $hasMany = [];
     public $belongsTo = [];
-    public $belongsToMany = [];
+    public $belongsToMany = [
+        'articals' => ['Intertech\Artemonovteam\Models\Artical',
+            'table' => 'intertech_artemonovteam_artical_tag'
+        ],
+    ];
     public $morphTo = [];
     public $morphOne = [];
     public $morphMany = [];

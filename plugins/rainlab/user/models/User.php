@@ -412,4 +412,11 @@ class User extends UserBase
     {
         $this->password = $this->password_confirmation = Str::random(6);
     }
+
+    public function scopeFilterPrograms($query, array $tags)
+    {
+        return $query->whereHas('programs', function ($query) use ($tags) {
+            $query->whereIn('intertech_artemonovteam_program_user.id', $tags);
+        });
+    }
 }
