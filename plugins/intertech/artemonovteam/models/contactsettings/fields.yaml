@@ -1,0 +1,26 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    address:
+        label: Адрес
+        type: textarea
+        size: middle
+        placeholder: Введите адрес спортивного клуба
+        comment: Адрес спортивного клуба
+
+    phone:
+        label: Телефон
+        type: text
+        span: left
+        placeholder: Введите телефон спортивного клуба
+        comment: Телефон спортивного клуба
+
+    email:
+        label: E-mail
+        type: text
+        span: right
+        placeholder: Введите E-mail спортивного клуба
+        comment: E-mail спортивного клуба
+

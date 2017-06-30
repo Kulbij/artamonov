@@ -140,4 +140,18 @@ class Plugin extends PluginBase
             ],
         ];
     }
+
+    public function registerSettings()
+    {
+        return [
+            'settings' => [
+                'label'       => 'Контакты',
+                'description' => 'Редактирование страницы контактов.',
+                'category'    => 'Сайт',
+                'icon'        => 'icon-line-chart',
+                'class'       => 'Intertech\Artemonovteam\Models\ContactSettings',
+                'order'       => 1,
+            ],
+        ];
+    }
 }

@@ -185,16 +185,7 @@ class Account extends ComponentBase
                 $data['password_confirmation'] = post('password');
             }
 
-            $rules = [
-                'email'    => 'required|email|between:6,255',
-                'password' => 'required|between:4,255|confirmed'
-            ];
-
-            if ($this->loginAttribute() == UserSettings::LOGIN_USERNAME) {
-                $rules['username'] = 'required|between:2,255';
-            }
-
-            $validation = Validator::make($data, $rules);
+            $validation = Validator::make($data, $this->userRules(), [], $this->attributeNames());
             if ($validation->fails()) {
                 throw new ValidationException($validation);
             }
@@ -207,14 +198,10 @@ class Account extends ComponentBase
             $userActivation = UserSettings::get('activate_mode') == UserSettings::ACTIVATE_USER;
             $user = Auth::register($data, $automaticActivation);
 
-            /*
-             * Activation is by the user, send the email
+            /**
+             * Send E-mail user and admin
              */
-            if ($userActivation) {
-                $this->sendActivationEmail($user);
-
-                Flash::success(Lang::get('rainlab.user::lang.account.activation_email_sent'));
-            }
+            // $this->sendMail($user);
 
             /*
              * Automatically activated or not required, log the user in
@@ -237,6 +224,63 @@ class Account extends ComponentBase
         catch (Exception $ex) {
             if (Request::ajax()) throw $ex;
             else Flash::error($ex->getMessage());
+        }
+    }
+
+    public function userRules()
+    {
+        return [
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'phone' => 'required|min:15',
+            'email'    => 'required|email|between:6,255|unique:users',
+            'password' => 'required|between:6,255|confirmed'
+        ];
+    }
+
+    /**
+     * Translations for attribute name
+     */
+    public function attributeNames()
+    {
+        return [
+            'last_name' => Lang::get('rainlab.user::lang.register.validation.last_name'),
+            'first_name' => Lang::get('rainlab.user::lang.register.validation.first_name'),
+            'phone' => Lang::get('rainlab.user::lang.register.validation.phone1'),
+            'email' => Lang::get('rainlab.user::lang.register.validation.email'),
+            'password' => Lang::get('rainlab.user::lang.register.validation.password'),
+            'vatin' => Lang::get('rainlab.user::lang.register.validation.vatin'),
+            'street' => Lang::get('
+                rainlab.user::lang.register.validation.street'),
+            'house' => Lang::get('rainlab.user::lang.register.validation.house'),
+            'flat' => Lang::get('rainlab.user::lang.register.validation.flat'),
+            'old_password' => Lang::get('rainlab.user::lang.register.validation.old_password'),
+            'password_confirmation' => Lang::get('rainlab.user::lang.register.validation.password_confirmation'),
+        ];
+    }
+
+    public function sendMail($user)
+    {
+        $socials = SocialSettings::instance();
+
+        if (FrontendSettings::get('mail')->send_customer_confirmation) {
+            Mail::send('rainlab.user::mail.register_user_for_admin', [
+                'user' => $user,
+                'socials' => $socials,
+                'date' => Carbon::now()->format('Y-m-d H:i')
+            ], function($message) use ($user) {
+                $message->to($user->email, $user->first_name . ' ' . $user->last_name);
+            });
+        }
+
+        if (FrontendSettings::get('mail')->send_admin_confirmation) {
+            Mail::send('rainlab.user::mail.register_user', [
+                'user' => $user,
+                'socials' => $socials,
+                'date' => Carbon::now()->format('Y-m-d H:i')
+            ], function($message) use ($user) {
+                $message->to(MailSetting::get('sender_email'), MailSetting::get('sender_name'));
+            });
         }
     }
 

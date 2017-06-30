@@ -95,9 +95,18 @@ return [
         'label' => 'Пользователь',
         'id' => 'ID',
         'username' => 'Имя пользователя',
-        'name' => 'Имя',
+        'first_name' => 'Имя',
         'name_empty' => 'Аноним',
-        'surname' => 'Фамилия',
+        'last_name' => 'Фамилия',
+        'patronymic' => 'Очество',
+        'phone1' => 'Номер телефона',
+        'phone2' => 'Дополнительный номер телефона',
+        'type' => 'Тип',
+        'vatin' => 'Идентификационный номер',
+        'city' => 'Город',
+        'street' => 'Улица',
+        'house' => 'Номер дома',
+        'flat' => 'Номер квартиры',
         'email' => 'Почта',
         'created_at' => 'Дата регистрации',
         'last_seen' => 'Последняя активность',
@@ -122,6 +131,9 @@ return [
         'status_guest' => 'Гость',
         'status_activated' => 'Активирован',
         'status_registered' => 'Зарегистрирован',
+        'status' => 'Статус',
+        'catalog_favorites' => 'Избранное каталога',
+        'shop_favorites' => 'Избранное магазина',
     ],
     'group' =>
     [
@@ -201,5 +213,36 @@ return [
         'redirect_title' => 'Перенаправление',
         'redirect_desc' => 'Страница для перенаправления при отсутствии доступа.',
         'logout' => 'Вы успешно вышли из системы!',
+    ],
+    'type' => [
+        'wholesale' => 'Оптовый',
+        'retail' => 'Розничный',
+    ],
+    'login' => [
+        'error' => [
+            'password' => 'Неверный пароль',
+        ],
+    ],
+    'register' => [
+        'validation' => [
+            'first_name' => 'Имя',
+            'last_name' => 'Фамилия',
+            'patronymic' => 'Отчество',
+            'phone1' => 'телефона',
+            'email' => 'E-mail',
+            'password' => 'Пароль',
+            'vatin' => 'ИНН',
+            'street' => 'Улица',
+            'house' => 'Дом',
+            'flat' => 'Квартира',
+            'phone2' => 'Дополнительный номер',
+            'old_password' => 'Текущий пароль',
+            'password_confirmation' => 'Повторный пароль'
+        ],
+    ],
+    'update' => [
+        'error' => [
+            'old_password' => 'Неверный текущий пароль'
+        ],
     ],
 ];
