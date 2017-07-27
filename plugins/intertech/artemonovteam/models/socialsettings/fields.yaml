@@ -1,0 +1,19 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    socials:
+        label: Социальные сети
+        type: repeater
+        form:
+            fields:
+                name:
+                    label: Название
+                    type: text
+                class:
+                    label: Класс
+                    type: text
+                url:
+                    label: Ссылка
+                    type: text

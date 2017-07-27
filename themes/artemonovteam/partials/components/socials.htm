@@ -1,0 +1,11 @@
+{% if socials %}
+    <div class="social">
+        <ul>
+            {% for social in socials %}
+                <li class="{{ social.class }}">
+                    <a href="{{ social.url }}"></a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+{% endif %}

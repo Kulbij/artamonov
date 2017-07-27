@@ -1,0 +1,44 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Название
+        type: text
+        placeholder: Введите название
+        span: left
+
+    is_main:
+        label: Главная
+        type: switch
+        comment: Отметить как главную обложку
+        span: right
+
+    is_botton:
+        label: Отображать кнопку
+        type: switch
+        comment: Отображать кнопку для этой обложи
+        span: left
+
+    link:
+        label: Ссылка
+        type: text
+        span: right
+        placeholder: http://ваш-сайт
+        comment: Укажите ссылку для перехода по кнопке (Подробнее)
+        trigger:
+            action: show
+            field: is_botton
+            condition: checked
+
+    description:
+        label: Описание
+        type: richeditor
+        comment: Укажите описание для этой обложки
+
+    image:
+        label: Изображения
+        type: fileupload
+        mode: image
+        tab: Управление

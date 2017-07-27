@@ -23,3 +23,6 @@
 1.0.9:
     - Create program user table
     - create_program_user_table.php
+1.0.10:
+    - Create covers table
+    - create_covers_table.php

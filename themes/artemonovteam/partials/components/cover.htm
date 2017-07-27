@@ -1,0 +1,25 @@
+{% if cover %}
+    <section class="training" style="background-image: url({{ cover.image.path }})">
+            <div class="background-opacity">
+                <div class="container">
+                    <article>
+                        <div class="content">
+                            <h2>
+                                {{ cover.name }}
+                            </h2>
+                            <div>
+                                <p>
+                                    {{ cover.description|raw|trim|striptags }}
+                                </p>
+                            </div>
+                            {% if cover.is_botton %}
+                                <div class="button-modal-more">
+                                    <a href="{{ cover.link }}">{{ 'Подробнее'|_ }}</a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    {% endif %}

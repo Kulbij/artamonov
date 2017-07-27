@@ -1,0 +1,14 @@
+<div class="communications">
+    <h2>
+        {{ 'Задать вопрос'|_ }}
+    </h2>
+    <form
+        action="#"
+        method="get"
+    >
+        <input type="text" id="name" name="name" placeholder="{{ 'Имя'|_ }}">
+        <input type="text" id="email" name="email" placeholder="{{ 'Почта'|_ }}">
+        <textarea name="message" id="#message" placeholder="{{ 'Сообщение'|_ }}"></textarea>
+        <input type="submit" value="{{ 'Отправить'|_ }}" id="foot-button">
+    </form>
+</div>

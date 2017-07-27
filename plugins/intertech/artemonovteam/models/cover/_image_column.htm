@@ -1,0 +1,5 @@
+<div>
+    <?php if ($record['image']): ?>
+        <img src="<?= $record['image']->getThumb(100, 70, 'crop') ?>" >
+    <?php endif ?>
+</div>

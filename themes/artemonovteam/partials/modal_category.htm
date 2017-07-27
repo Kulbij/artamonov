@@ -1,0 +1,12 @@
+<div class="modal-form-cat">
+    <div class="close"></div>
+    <h3>{{ 'Вы перешли в категорию'|_ }} {{ category.name }}</h3>
+    <article>
+        <p>
+            {{ category.description|raw }}
+        </p>
+        <div class="videoWrapper ">
+            <iframe width="560" height="315" src="{{ category.video }}" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </article>
+</div>

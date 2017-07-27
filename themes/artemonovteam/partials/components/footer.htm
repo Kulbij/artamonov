@@ -1,0 +1,44 @@
+<footer>
+    <div class="foot">
+        <div class="container">
+            <div class="about">
+                <h2>
+                    {{ 'О нас'|_ }}
+                </h2>
+                <p>{{ setting.about|raw|trim|striptags }}</p>
+                {% if contact.address or contact.email or contact.phone %}
+                    <div class="contact">
+                        {% if contact.address %}
+                            <p>
+                                <span>{{ 'Адрес'|_ }}:</span>{{ contact.address }}
+                            </p>
+                        {% endif %}
+                        {% if contact.email %}
+                            <p>
+                                <span>{{ 'Почта'|_ }}:</span> {{ contact.email }}
+                            </p>
+                        {% endif %}
+                        {% if contact.phone %}
+                            <p>
+                                <span>{{ 'Телефон'|_ }}:</span> {{ contact.phone }}
+                            </p>
+                        {% endif %}
+                    </div>
+                {% endif %}
+                {% component 'socials' %}
+            </div>
+            {% component 'askquestion' %}
+        </div>
+        <div class="bottom-foot">
+            <div class="container">
+                <p>
+                    {{ 'Copyright'|_ }} {{ 'now'|date('Y') }}
+                </p>
+                <div class="copyright">
+                    Development by&nbsp;
+                    <a href="http://intertechcompany.com/" target="_blank">Intertech</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>

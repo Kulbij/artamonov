@@ -12,7 +12,7 @@ class Plugin extends PluginBase
      * @var array Plugin dependencies
      */
     public $require = ['RainLab.User'];
-    
+
     /**
      * Returns information about this plugin.
      *
@@ -55,10 +55,15 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Intertech\Artemonovteam\Components\MyComponent' => 'myComponent',
+            'Intertech\Artemonovteam\Components\Cover' => 'cover',
+            'Intertech\Artemonovteam\Components\Pages' => 'pages',
+            'Intertech\Artemonovteam\Components\Socials' => 'socials',
+            'Intertech\Artemonovteam\Components\AskQuestion' => 'askquestion',
+            'Intertech\Artemonovteam\Components\Footer' => 'footer',
+            'Intertech\Artemonovteam\Components\Categories' => 'categories',
+            'Intertech\Artemonovteam\Components\Calendar' => 'calendar',
+            'Intertech\Artemonovteam\Components\UpWorkuuts' => 'upworkouts',
         ];
     }
 
@@ -136,6 +141,13 @@ class Plugin extends PluginBase
                         'permissions' => ['intertech.artemonovteam.*'],
                         'order'       => 500,
                     ],
+                    'covers' => [
+                        'label'       => 'Обложки',
+                        'url'         => Backend::url('intertech/artemonovteam/covers'),
+                        'icon'        => 'icon-users',
+                        'permissions' => ['intertech.artemonovteam.*'],
+                        'order'       => 600,
+                    ],
                 ],
             ],
         ];
@@ -144,13 +156,29 @@ class Plugin extends PluginBase
     public function registerSettings()
     {
         return [
-            'settings' => [
+            'contactsettings' => [
                 'label'       => 'Контакты',
                 'description' => 'Редактирование страницы контактов.',
                 'category'    => 'Сайт',
-                'icon'        => 'icon-line-chart',
+                'icon'        => 'icon-phone',
                 'class'       => 'Intertech\Artemonovteam\Models\ContactSettings',
                 'order'       => 1,
+            ],
+            'socialsettings' => [
+                'label'       => 'Социальные сети',
+                'description' => 'Редактирование социальных сетей.',
+                'category'    => 'Сайт',
+                'icon'        => 'icon-facebook',
+                'class'       => 'Intertech\Artemonovteam\Models\SocialSettings',
+                'order'       => 2,
+            ],
+            'settings' => [
+                'label'       => 'Основная информация',
+                'description' => 'Редактирование основной информации.',
+                'category'    => 'Сайт',
+                'icon'        => 'icon-sun-o',
+                'class'       => 'Intertech\Artemonovteam\Models\Settings',
+                'order'       => 3,
             ],
         ];
     }

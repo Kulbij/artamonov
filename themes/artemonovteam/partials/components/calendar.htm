@@ -1,0 +1,15 @@
+{% if calendar.is_calendar %}
+    <section class="calendar">
+        <div class="container">
+            <div class="calendar-wrap">
+                <h2>
+                    {{ 'Календарь тренировок'|_ }}
+                </h2>
+                <div class="responsiveCal">
+                    <iframe src="{{ calendar.calendar_src }}"
+                            style="border-width:0" width="{{ calendar.calendar_width }}" height="{{ calendar.calendar_height }}" frameborder="0" scrolling="no"></iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endif %}

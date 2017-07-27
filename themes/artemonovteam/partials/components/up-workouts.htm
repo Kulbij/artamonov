@@ -1,0 +1,32 @@
+{% if articals|length > 0 %}
+    <section class="workouts">
+        <div class="container">
+            <article>
+                <h2>
+                    {{ 'Ближайшие тренировки'|_ }}
+                </h2>
+                <div class="workouts-list">
+                    <ul>
+                        {% for artical in articals %}
+                            <li>
+                                <div class="img-orkouts-list">
+                                    <div class="back-img" style='background-image: url({{ artical.image.thumb('auto', 200) }})'></div>
+                                    <img src="{{ artical.image.thumb('auto', 200) }}" alt="foto">
+                                </div>
+                                <h3>
+                                    {{ artical.title }}
+                                </h3>
+                                <div class="article">
+                                    <p>{{ artical.short_text }}</p>
+                                </div>
+                                <div class="button-more">
+                                    <a href="{{ 'post'|page({ slug: artical.slug }) }}">{{ 'Подробнее'|_ }}</a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </article>
+        </div>
+    </section>
+{% endif %}

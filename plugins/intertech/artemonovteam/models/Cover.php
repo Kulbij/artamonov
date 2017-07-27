@@ -2,15 +2,14 @@
 
 use Model;
 use October\Rain\Database\Traits\Sortable;
-use Intertech\Artemonovteam\Traits\PageTrait;
 use October\Rain\Database\Traits\Validation;
 
 /**
- * Category Model
+ * Cover Model
  */
-class Category extends Model
+class Cover extends Model
 {
-    use Validation, Sortable, PageTrait;
+    use Validation, Sortable;
 
     public $implement = [
         'RainLab.Translate.Behaviors.TranslatableModel'
@@ -18,25 +17,22 @@ class Category extends Model
 
     public $translatable = [
         'name',
-        'short_text',
         'description'
     ];
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'intertech_artemonovteam_categories';
-
-    public $timestamps = false;
+    public $table = 'intertech_artemonovteam_covers';
 
     public $rules = [
         'name' => 'required',
-        'slug' => 'required|unique:intertech_artemonovteam_categories',
+        'link' => 'url'
     ];
 
     public $attributeNames = [
         'name' => 'Название',
-        'cms_page' => 'Страница',
+        'link' => 'Ссылка',
     ];
 
     /**
@@ -49,11 +45,10 @@ class Category extends Model
      */
     protected $fillable = [
         'name',
-        'short_text',
+        'link',
         'description',
-        'video',
-        'slug',
-        'is_enabled'
+        'is_botton',
+        'is_main'
     ];
 
     /**
@@ -62,4 +57,13 @@ class Category extends Model
     public $attachOne = [
         'image' => 'System\Models\File',
     ];
+
+    public function beforeSave()
+    {
+        if ($this->is_main) {
+            $this->where('is_main', true)->update([
+                'is_main' => false
+            ]);
+        }
+    }
 }

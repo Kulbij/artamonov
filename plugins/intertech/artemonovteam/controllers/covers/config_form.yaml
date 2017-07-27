@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Обложки
+
+# Model Form Field configuration
+form: $/intertech/artemonovteam/models/cover/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Artemonovteam\Models\Cover
+
+# Default redirect location
+defaultRedirect: intertech/artemonovteam/covers
+
+# Create page
+create:
+    title: Создание обложки
+    redirect: intertech/artemonovteam/covers/update/:id
+    redirectClose: intertech/artemonovteam/covers
+
+# Update page
+update:
+    title: Редактирование обложки
+    redirect: intertech/artemonovteam/covers
+    redirectClose: intertech/artemonovteam/covers
+
+# Preview page
+preview:
+    title: Просмотр обложки

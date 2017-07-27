@@ -11,22 +11,20 @@ columns:
         label: Название
         searchable: true
 
-    slug:
-        label: Ссылка
-        searchable: true
-
-    short_text:
-        label: Краткий текст
-
-    is_enabled:
-        label: Видимость
+    is_main:
+        label: Главная
         type: switch
 
-    sort_order:
-        label: Позиция
+    description:
+        label: Описание
+        select: left(description, 100)
 
     image:
         label: Изображение
         type: partial
-        path: ~/plugins/intertech/artemonovteam/models/category/_image_column.htm
+        path: ~/plugins/intertech/artemonovteam/models/cover/_image_column.htm
         sortable: false
+
+    link:
+        label: Ссылка
+        searchable: true

@@ -2,5 +2,51 @@ title = "Home page"
 url = "/"
 layout = "default"
 
+[cover]
+partial = "cover.htm"
+
+[categories]
+partial = "categories.htm"
+
+[calendar]
+partial = "calendar.htm"
+
+[upworkouts]
+partial = "up-workouts.htm"
+
 ==
 {% put bodyClass %} class="page-home" {% endput %}
+
+<main>
+    {% component 'cover' %}
+    <section class="dream">
+        <div class="container">
+            <article>
+                <div class="content">
+                    <h2>
+                        Artamonovteam помогут вам осуществить вашу мечту!
+                    </h2>
+                    <p>
+                        Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев более
+                        менее осмысленного текста рыбы на русском языке, а начинающему оратору отточить навык публичных
+                        выступлений в домашних условиях. При создании генератора мы использовали небезизвестный
+                        универсальный код речей. Текст генерируется абзацами случайным образом от двух до десяти
+                        предложений
+                        в абзаце, что позволяет сделать текст более привлекательным и живым для визуально-слухового
+                        восприятия.
+                    </p>
+                </div>
+                <div class="foto">
+                    <div class="img-holder">
+                        <div class="img-opacity" style='background-image: url("img/foto.png")'></div>
+                        <img src="img/foto.png" alt="Foto">
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+    
+    {% component 'categories' %}
+    {% component 'calendar' %}
+    {% component 'upworkouts' %}
+</main>

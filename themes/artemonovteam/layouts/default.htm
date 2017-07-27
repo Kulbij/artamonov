@@ -1,43 +1,180 @@
 description = "Default layout"
 
 [seo]
+[pages]
+partial = "pages.htm"
+
+[socials]
+partial = "socials.htm"
+
+[askquestion]
+partial = "askquestion.htm"
+
+[footer]
+partial = "footer.htm"
+
 ==
 
-<!DOCYYPE HTML>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
+	{% component 'seo' %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="{{ 'assets/css/main.css'|theme }}">
+    {% styles %}
 </head>
-<body>
-
-	<form data-request="onRegister">
-		<div>
-			<label>Имя</label>
-			<input type="text" name="first_name">
-		</div>
-		<div>
-			<label>Фамилия</label>
-			<input type="text" name="last_name">
-		</div>
-		<div>
-			<label>Телефон</label>
-			<input type="text" name="phone">
-		</div>
-		<div>
-			<label>E-mail</label>
-			<input type="text" name="email">
-		</div>
-		<div>
-			<label>Пароль</label>
-			<input type="text" name="email">
-		</div>
-		<div>
-			<label>Повторный пароль</label>
-			<input type="text" name="email">
-		</div>
-		<input type="submit" name="">
-	</form>
-
+<body class="wrapper">
+<header>
+    <div class="container">
+        <div class="head">
+            <div class="button-in-item">
+                <a href="{{ 'home'|page }}">{{ 'Хочу в команду'|_ }}</a>
+            </div>
+            <div class="head-item">
+                <a href="{{ 'home'|page }}">
+                    <img src="{{ 'assets/img/logo.png'|theme }}" alt="Logo">
+                </a>
+            </div>
+            <div class="button-in">
+                <a href="#">{{ 'Войти'|_ }}</a>
+            </div>
+        </div>
+    </div>
+    {% component 'pages' %}
+    <div class="modal modal-in-item">
+        <div class="modal-form-in-item">
+            <div class="close"></div>
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>{{ 'Хочу в команду'|_ }}</legend>
+                    <ul class="age-form">
+                        <li>
+                            <input type="radio" id="check1" name="swimming" value="swimming" class="checkbox">
+                            <label for="check1">Плавание</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="check2" name="run" value="run" class="checkbox">
+                            <label for="check2">Бег</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="check3" name="triathlon" value="triathlon" class="checkbox">
+                            <label for="check3">Триатлон</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="check4" name="cycling" value="cycling" class="checkbox">
+                            <label for="check4">Велоспорт</label>
+                        </li>
+                    </ul>
+                    <ul class="contacts-form">
+                        <li>
+                            <input type="text" id="name" name="name" placeholder="Имя">
+                        </li>
+                        <li>
+                            <input type="text" id="last-name" name="last-name" placeholder="Фамилия">
+                        </li>
+                        <li>
+                            <input type="text" id="phone" name="phone" placeholder="Телефон">
+                        </li>
+                        <li>
+                            <input type="text" id="meil" name="meil" placeholder="Почта">
+                        </li>
+                        <li class="question">
+                            <textarea name="question" id="question" placeholder="Занимались ли ранее каким-то спортом? Каким?"></textarea>
+                        </li>
+                    </ul>
+                </fieldset>
+                <input type="submit" value="Отправить" class="butt">
+            </form>
+        </div>
+    </div>
+    <div class="modal modal-in">
+        <div class="modal-form-in">
+            <div class="close"></div>
+            <div class="logo">
+                <a href="index.html">
+                    <img src="img/logo.png" alt="Logo">
+                </a>
+            </div>
+            <div class="login-f">
+                <p>Войти через Facebook</p>
+            </div>
+            <div class="login-i">
+                <p>Войти через Instagram</p>
+            </div>
+            <form action="#" method="get">
+                <ul>
+                    <li>
+                        <input type="text" id="pass" name="pass" placeholder="Пароль">
+                    </li>
+                    <li>
+                        <input type="text" id="meil" name="meil" placeholder="Почта">
+                    </li>
+                </ul>
+            </form>
+            <div class="button-reg">
+                <a>Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+    <div class="modal modal-reg">
+        <div class="modal-form-reg">
+            <div class="close"></div>
+            <form action="#" method="get">
+                <fieldset>
+                    <legend>Регистрация</legend>
+                    <p>Ваш возраст</p>
+                    <ul class="age-form">
+                        <li>
+                            <input type="radio" id="check1" name="age" value="18-24" class="checkbox">
+                            <label for="check1">18-24</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="check2" name="age" value="25-30" class="checkbox">
+                            <label for="check2">25-30</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="check3" name="age" value="31-35" class="checkbox">
+                            <label for="check3">31-35</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="check4" name="age" value="36-45" class="checkbox">
+                            <label for="check4">36-45</label>
+                        </li>
+                        <li>
+                            <input type="radio" id="check5" name="age" value="46-55" class="checkbox">
+                            <label for="check5">46-55</label>
+                        </li>
+                    </ul>
+                    <ul class="contacts-form">
+                        <li>
+                            <input type="text" id="name" name="name" placeholder="Имя" required>
+                        </li>
+                        <li>
+                            <input type="text" id="last-name" name="last-name" placeholder="Фамилия" required>
+                        </li>
+                        <li>
+                            <input type="text" id="phone" name="phone" placeholder="Телефон" required>
+                        </li>
+                        <li>
+                            <input type="text" id="meil" name="meil" placeholder="Почта">
+                        </li>
+                    </ul>
+                </fieldset>
+                <input type="submit" value="Отправить" class="butt">
+            </form>
+        </div>
+    </div>
+</header>
+{% page %}
+{% component 'footer' %}
+	<script
+	        src="https://code.jquery.com/jquery-2.2.4.min.js"
+	        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
+	        crossorigin="anonymous"></script>
+	<script src="{{ 'assets/js/app.js'|theme }}"></script>
+	<script src="{{ 'assets/source-js/main.js'|theme }}"></script>
+	{% framework extras %}
+    {% scripts %}
 </body>
 </html>

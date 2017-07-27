@@ -1,0 +1,20 @@
+{% if pages|length >0 %}
+    <nav>
+        <div id="navbar" class="humburger">
+            <ul class="nav navbar-nav nav-head">
+                {% for page in pages %}
+                    <li>
+                        <a href="{{ page.cms_page|page }}">{{ page.name }}</a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle  button-nav">
+                <span class="sr-only"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+    </nav>
+{% endif %}

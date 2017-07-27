@@ -20,3 +20,9 @@ columns:
 
     sort_order:
         label: Позиция
+
+    image:
+        label: Изображение
+        type: partial
+        path: ~/plugins/intertech/artemonovteam/models/category/_image_column.htm
+        sortable: false

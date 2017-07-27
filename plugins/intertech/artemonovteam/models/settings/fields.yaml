@@ -1,0 +1,34 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+  fields:
+      about:
+          label: О нас
+          type: richeditor
+          comment: Укажите информацию для блока "О нас"
+          tab: Основная
+      
+      is_calendar:
+          label: Включить
+          type: switch
+          span: left
+          tab: Календар
+          comment: Включить календар
+      calendar_src:
+          label: Ссылка
+          type: textarea
+          tab: Календар
+
+      calendar_width:
+          label: Шырина
+          type: text
+          span: left
+          tab: Календар
+
+      calendar_height:
+          label: Высота
+          type: text
+          span: right
+          tab: Календар
