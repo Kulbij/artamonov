@@ -58,7 +58,8 @@ class Plugin extends PluginBase
         return [
             'Intertech\Forms\Components\Callback' => 'callback',
             'Intertech\Forms\Components\ProductFeedback' => 'productFeedback',
-            'Intertech\Forms\Components\Feedback' => 'feedback'
+            'Intertech\Forms\Components\Feedback' => 'feedback',
+            'Intertech\Forms\Components\Team' => 'formTeam'
         ];
     }
 

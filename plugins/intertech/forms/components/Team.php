@@ -1,18 +1,17 @@
-<?php namespace Intertech\Artemonovteam\Components;
+<?php namespace Intertech\Forms\Components;
 
 use Cms\Classes\ComponentBase;
-use Intertech\Artemonovteam\Models\Settings;
-use Intertech\Artemonovteam\Models\ContactSettings;
-use Intertech\Artemonovteam\Traits\ComponentsTrait;
+use Intertech\Artemonovteam\Models\Category;
+use Intertech\Forms\Traits\ComponentsTrait;
 
-class Footer extends ComponentBase
+class Team extends ComponentBase
 {
     use ComponentsTrait;
-    
+
     public function componentDetails()
     {
         return [
-            'name'        => 'Footer Component',
+            'name'        => 'Team Component',
             'description' => 'No description provided yet...'
         ];
     }
@@ -23,14 +22,16 @@ class Footer extends ComponentBase
             'partial' => [
                 'label' => 'Partial',
                 'description' => 'Partial file name',
-            ]
+            ],
         ];
     }
 
     public function getData()
     {
+        $categories = Category::where('is_enabled', true)->orderBy('sort_order', 'asc')->get();
+
         return [
-            'setting' => Settings::instance()
+            'categories' => $categories
         ];
     }
 }

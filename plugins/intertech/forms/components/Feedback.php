@@ -13,9 +13,9 @@ use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Validator;
 use Intertech\Forms\Models\Feedback as FeedbackModel;
 use Intertech\Forms\Traits\ComponentsTrait;
-use Intertech\Korkki\Models\ContactSettings;
-use Intertech\Korkki\Models\SocialSettings;
-use Feegleweb\Octoshop\Models\FrontendSettings;
+use Intertech\Artemonovteam\Models\Settings;
+use Intertech\Artemonovteam\Models\ContactSettings;
+use Intertech\Artemonovteam\Models\SocialSettings;
 
 class Feedback extends ComponentBase
 {
@@ -42,14 +42,15 @@ class Feedback extends ComponentBase
     public function getData()
     {
         return [
-            'contactSettings' => ContactSettings::instance(),
+            'form' => Settings::instance(),
+            'contactSettings' => ContactSettings::instance()
         ];
     }
 
     public function attributeNames()
     {
         return [
-            'full_name' => 'Полное имя',
+            'full_name' => 'Имя',
             'email' => 'Email',
             'message' => 'Сообщение',
             'type' => 'Тип формы'
@@ -67,8 +68,7 @@ class Feedback extends ComponentBase
             $rules = [
                 'full_name' => 'required',
                 'email' => 'required|email',
-                'message' => 'required',
-                'type' => 'integer|max:2|min:1',
+                'message' => 'required'
             ];
 
             $validation = Validator::make($data, $rules, [], $this->attributeNames());
@@ -80,7 +80,7 @@ class Feedback extends ComponentBase
             $model->fill($data);
             $model->save();
 
-            $this->sendMail($data);
+            // $this->sendMail($data);
 
             Flash::success(Lang::get('intertech.forms::lang.callback.success_send_form'));
 
@@ -110,15 +110,15 @@ class Feedback extends ComponentBase
             // });
         // }
 
-        if (FrontendSettings::get('mail')->send_admin_confirmation) {
-            Mail::send('intertech.forms::mail.admin_feedback', [
-                'data' => $data,
-                'text' => $data['message'],
-                'socials' => $socials,
-                'date' => Carbon::now()->format('Y-m-d H:i')
-            ], function($message) {
-                $message->to(MailSetting::get('sender_email'), MailSetting::get('sender_name'));
-            });
-        }
+        // if (FrontendSettings::get('mail')->send_admin_confirmation) {
+        //     Mail::send('intertech.forms::mail.admin_feedback', [
+        //         'data' => $data,
+        //         'text' => $data['message'],
+        //         'socials' => $socials,
+        //         'date' => Carbon::now()->format('Y-m-d H:i')
+        //     ], function($message) {
+        //         $message->to(MailSetting::get('sender_email'), MailSetting::get('sender_name'));
+        //     });
+        // }
     }
 }

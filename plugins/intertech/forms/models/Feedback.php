@@ -14,14 +14,14 @@ class Feedback extends Model
 
     public $rules = [
         'full_name' => 'required',
-        'phone' => 'required',
+        // 'phone' => 'required',
         'email' => 'required|email',
         'message' => 'required',
     ];
 
     public $attributeNames = [
         'full_name' => 'Полное имя',
-        'phone' => 'Телефон',
+        // 'phone' => 'Телефон',
         'email' => 'Email',
         'message' => 'Сообщение',
     ];

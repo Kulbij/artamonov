@@ -1,0 +1,40 @@
+{% if trainers|length > 0 %}
+    <main>
+        <section class="wrap-team">
+            <div class="container">
+                <h2>{{ page.name }}</h2>
+                <ul class="block-team">
+                    {% for trainer in trainers %}
+                        <li>
+                            <div class="img-holder">
+                                <img src="{{ trainer.image.thumb('auto', 300) }}" alt="img">
+                                <div class="img-opacity" style='background-image: url({{ trainer.image.thumb('auto', 300) }})'></div>
+                            </div>
+                            <div class="name-coach">
+                                <p>{{ trainer.full_name }}</p>
+                            </div>
+                            <div class="description-coach">
+                                <p>{{ trainer.position }}</p>
+                            </div>
+                            <div class="text-coach">
+                                <p>{{ trainer.description|raw|trim|striptags }}</p>
+                            </div>
+                            {% if trainer.socials|length > 0 %}
+                                <div class="social">
+                                    <ul>
+                                    {% for social in trainer.socials %}
+                                        <li class="{{ social.class }}">
+                                            <a href="{{ social.url }}" class="fa fa-{{ social.class }}" aria-hidden="true"></a>
+                                        </li>
+                                    {% endfor %}
+                                    </ul>
+
+                                </div>
+                            {% endif %}
+                        </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+    </main>
+{% endif %}

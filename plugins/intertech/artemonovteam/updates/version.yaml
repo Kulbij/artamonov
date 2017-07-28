@@ -26,3 +26,6 @@
 1.0.10:
     - Create covers table
     - create_covers_table.php
+1.0.11:
+    - Update trainers table
+    - update_trainers_table.php

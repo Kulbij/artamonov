@@ -1,0 +1,38 @@
+<div class="contact">
+    <h3>
+        {{ 'Связаться с нами'|_ }}
+    </h3>
+    {% if form.is_page_contact_callback %}
+        {% component 'pageContacts' %}
+    {% endif %}
+    {% if form.is_subscribe %}
+        <form
+            class="distribution"
+            data-request="onSubscriberUser"
+            data-request-flash
+            data-request-validate
+            data-request-success="$('input').val('');"
+        >
+            <fieldset>
+                <legend>{{ 'Подписаться на рассылку'|_ }}</legend>
+                <ul>
+                    <li>
+                        <input type="text" id="emeil" placeholder="{{ 'Введите e-mail'|_ }}" name="email" size="38">
+                        <div class="error-text" data-validate-for="email"></div>
+                    </li>
+                    <li >
+                        <button
+                            type="button"
+                            data-request="onSubscriberUser"
+                            data-request-flash
+                            data-request-validate
+                            data-request-success="$('input#emeil').val('');"
+                        >
+                            <img src="{{ 'assets/img/button.png'|theme }}" alt="{{ 'отправить'|_ }} ">
+                        </button>
+                    </li>
+                </ul>
+            </fieldset>
+        </form>
+    {% endif %}
+</div>

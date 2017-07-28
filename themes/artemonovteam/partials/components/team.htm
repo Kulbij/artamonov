@@ -1,0 +1,43 @@
+<div class="modal modal-in-item">
+    <div class="modal-form-in-item">
+        <div class="close"></div>
+        <form action="#" method="get">
+            <fieldset>
+                <legend>{{ 'Хочу в команду'|_ }}</legend>
+                {% if categories|length > 0 %}
+                    <ul class="age-form">
+                        {% for category in categories %}
+                            <li>
+                                <input type="radio" id="{{ category.slug }}" name="category" value="category" class="checkbox">
+                                <label for="{{ category.slug }}">{{ category.name }}</label>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+                <ul class="contacts-form">
+                    <li>
+                        <input type="text" id="name" name="first_name" placeholder="{{ 'Имя'|_ }}">
+                        <div class="error-text" data-validate-for="first_name"></div>
+                    </li>
+                    <li>
+                        <input type="text" id="last-name" name="last_name" placeholder="{{ 'Фамилия'|_ }}">
+                        <div class="error-text" data-validate-for="last_name"></div>
+                    </li>
+                    <li>
+                        <input type="text" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}">
+                        <div class="error-text" data-validate-for="phone"></div>
+                    </li>
+                    <li>
+                        <input type="text" id="meil" name="meil" placeholder="{{ 'Почта'|_ }}">
+                        <div class="error-text" data-validate-for="meil"></div>
+                    </li>
+                    <li class="question">
+                        <textarea name="question" id="question" placeholder="{{ 'Занимались ли ранее каким-то спортом? Каким?'|_ }}"></textarea>
+                        <div class="error-text" data-validate-for="question"></div>
+                    </li>
+                </ul>
+            </fieldset>
+            <input type="submit" value="{{ 'Отправить'|_ }}" class="butt">
+        </form>
+    </div>
+</div>

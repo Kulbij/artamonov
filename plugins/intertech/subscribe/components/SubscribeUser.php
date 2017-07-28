@@ -6,6 +6,7 @@ use Intertech\Subscribe\Traits\ComponentsTrait;
 use Illuminate\Support\Facades\Mail;
 use October\Rain\Support\Facades\Flash;
 use Rainlab\Translate\Models\Message;
+use Intertech\Artemonovteam\Models\Settings;
 use Intertech\Subscribe\Models\Settings as SubscribeSettings;
 
 class SubscribeUser extends ComponentBase
@@ -30,14 +31,15 @@ class SubscribeUser extends ComponentBase
      */
     public function getData()
     {
-        return [];
+        return [
+            'form' => Settings::instance()
+        ];
     }
 
     public function onSubscriberUser()
     {
         $subscriber = Subscriber::create([
-            'email' => post('email'),
-            'type' => Subscriber::TYPE_DEFAULT,
+            'email' => post('email')
         ]);
         
         if ($mailTemplate = SubscribeSettings::get('subscribe_template')) {

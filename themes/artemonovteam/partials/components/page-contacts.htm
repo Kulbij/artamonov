@@ -1,0 +1,19 @@
+{% if contact.address or contact.email or contact.phone %}
+    <ul>
+        {% if contact.address %}
+            <li>
+                <span>{{ 'Адрес'|_ }}:</span>{{ contact.address }}
+            </li>
+        {% endif %}
+        {% if contact.email %}
+            <li>
+                <span>{{ 'Почта'|_ }}:</span> {{ contact.email }}
+            </li>
+        {% endif %}
+        {% if contact.phone %}
+            <li>
+                <span>{{ 'Телефон'|_ }}:</span> {{ contact.phone }}
+            </li>
+        {% endif %}
+    </ul>
+{% endif %}

@@ -13,9 +13,9 @@ fields:
         type: text
         span: right
 
-    phone:
-        label: Телефон
-        type: text
+    # phone:
+    #     label: Телефон
+    #     type: text
 
     message:
         label: Сообщение

@@ -2,6 +2,24 @@ title = "Contacts page"
 url = "/contacts"
 layout = "default"
 
-==
-{% put bodyClass %} class="page-home" {% endput %}
+[subscribeUser]
+partial = "subscribe-user.htm"
 
+[contacts pageContacts]
+partial = "page-contacts.htm"
+
+[feedback]
+partial = "feedback.htm"
+
+==
+
+<main>
+    <section class="wrap-contact">
+        <div class="container">
+            <div class="block-contact">
+                {% component 'subscribeUser' %}
+                {% component 'feedback' %}
+            </div>
+        </div>
+    </section>
+</main>

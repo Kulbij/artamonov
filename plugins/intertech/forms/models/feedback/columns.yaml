@@ -16,9 +16,9 @@ columns:
         label: Email
         searchable: true
 
-    phone:
-        label: Телефон
-        searchable: true
+    # phone:
+    #     label: Телефон
+    #     searchable: true
 
     message:
         label: Сообщение

@@ -8,9 +8,9 @@ columns:
         searchable: true
         invisible: true
 
-    full_name:
-        label: Полное имя
-        searchable: true
+    # full_name:
+    #     label: Полное имя
+    #     searchable: true
 
     email:
         label: Email

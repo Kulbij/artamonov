@@ -10,8 +10,14 @@ partial = "socials.htm"
 [askquestion]
 partial = "askquestion.htm"
 
+[contacts]
+partial = "footer-contacts.htm"
+
 [footer]
 partial = "footer.htm"
+
+[formTeam]
+partial = "team.htm"
 
 ==
 
@@ -29,7 +35,7 @@ partial = "footer.htm"
     <div class="container">
         <div class="head">
             <div class="button-in-item">
-                <a href="{{ 'home'|page }}">{{ 'Хочу в команду'|_ }}</a>
+                <a href="#">{{ 'Хочу в команду'|_ }}</a>
             </div>
             <div class="head-item">
                 <a href="{{ 'home'|page }}">
@@ -42,52 +48,8 @@ partial = "footer.htm"
         </div>
     </div>
     {% component 'pages' %}
-    <div class="modal modal-in-item">
-        <div class="modal-form-in-item">
-            <div class="close"></div>
-            <form action="#" method="get">
-                <fieldset>
-                    <legend>{{ 'Хочу в команду'|_ }}</legend>
-                    <ul class="age-form">
-                        <li>
-                            <input type="radio" id="check1" name="swimming" value="swimming" class="checkbox">
-                            <label for="check1">Плавание</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="check2" name="run" value="run" class="checkbox">
-                            <label for="check2">Бег</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="check3" name="triathlon" value="triathlon" class="checkbox">
-                            <label for="check3">Триатлон</label>
-                        </li>
-                        <li>
-                            <input type="radio" id="check4" name="cycling" value="cycling" class="checkbox">
-                            <label for="check4">Велоспорт</label>
-                        </li>
-                    </ul>
-                    <ul class="contacts-form">
-                        <li>
-                            <input type="text" id="name" name="name" placeholder="Имя">
-                        </li>
-                        <li>
-                            <input type="text" id="last-name" name="last-name" placeholder="Фамилия">
-                        </li>
-                        <li>
-                            <input type="text" id="phone" name="phone" placeholder="Телефон">
-                        </li>
-                        <li>
-                            <input type="text" id="meil" name="meil" placeholder="Почта">
-                        </li>
-                        <li class="question">
-                            <textarea name="question" id="question" placeholder="Занимались ли ранее каким-то спортом? Каким?"></textarea>
-                        </li>
-                    </ul>
-                </fieldset>
-                <input type="submit" value="Отправить" class="butt">
-            </form>
-        </div>
-    </div>
+    {% component 'formTeam' %}
+
     <div class="modal modal-in">
         <div class="modal-form-in">
             <div class="close"></div>
@@ -117,6 +79,7 @@ partial = "footer.htm"
             </div>
         </div>
     </div>
+
     <div class="modal modal-reg">
         <div class="modal-form-reg">
             <div class="close"></div>
@@ -168,6 +131,14 @@ partial = "footer.htm"
 </header>
 {% page %}
 {% component 'footer' %}
+{% flash %}
+    <p
+        data-control="flash-message"
+        class="flash-message fade {{ type }}"
+        data-interval="5">
+        {{ message }}
+    </p>
+{% endflash %}
 	<script
 	        src="https://code.jquery.com/jquery-2.2.4.min.js"
 	        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="

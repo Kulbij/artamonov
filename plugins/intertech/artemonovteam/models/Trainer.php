@@ -19,7 +19,10 @@ class Trainer extends Model
     public $translatable = [
         'full_name',
         'description',
+        'position'
     ];
+
+    public $jsonable = ['socials'];
 
     /**
      * @var string The database table used by the model.
@@ -28,7 +31,7 @@ class Trainer extends Model
 
     public $rules = [
         'full_name' => 'required',
-        'description' => 'required',
+        'description' => 'required'
     ];
 
     public $attributeNames = [
@@ -48,6 +51,8 @@ class Trainer extends Model
         'full_name',
         'description',
         'is_enabled',
+        'position',
+        'socials'
     ];
 
     /**

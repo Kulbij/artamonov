@@ -6,25 +6,7 @@
                     {{ 'О нас'|_ }}
                 </h2>
                 <p>{{ setting.about|raw|trim|striptags }}</p>
-                {% if contact.address or contact.email or contact.phone %}
-                    <div class="contact">
-                        {% if contact.address %}
-                            <p>
-                                <span>{{ 'Адрес'|_ }}:</span>{{ contact.address }}
-                            </p>
-                        {% endif %}
-                        {% if contact.email %}
-                            <p>
-                                <span>{{ 'Почта'|_ }}:</span> {{ contact.email }}
-                            </p>
-                        {% endif %}
-                        {% if contact.phone %}
-                            <p>
-                                <span>{{ 'Телефон'|_ }}:</span> {{ contact.phone }}
-                            </p>
-                        {% endif %}
-                    </div>
-                {% endif %}
+                {% component 'contacts' %}
                 {% component 'socials' %}
             </div>
             {% component 'askquestion' %}

@@ -32,3 +32,34 @@ tabs:
           type: text
           span: right
           tab: Календар
+
+      is_feedback:
+          label: Отображать форму "Написать нам"
+          type: switch
+          span: left
+          comment: Отображать форму "Написать нам" на странице "Контакты"
+          default: true
+          tab: Формы
+
+      is_subscribe:
+          label: Отображать "Подписаться на рассылку"
+          type: switch
+          span: right
+          comment: Отображать "Подписаться на рассылку" на странице "Контакты"
+          default: true
+          tab: Формы
+
+      is_callback:
+          label: Отображать форму "Задать вопрос"
+          type: switch
+          span: left
+          comment: Отображать форму "Задать вопрос" в низу (Footer) сайта
+          default: true
+          tab: Формы
+
+      is_page_contact_callback:
+          label: Отображать блок "Связаться с нами"
+          type: switch
+          span: right
+          tab: Формы
+          comment: Отображать блок "Связаться с нами" на странице "Контакты"

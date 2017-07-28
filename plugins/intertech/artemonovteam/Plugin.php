@@ -64,6 +64,8 @@ class Plugin extends PluginBase
             'Intertech\Artemonovteam\Components\Categories' => 'categories',
             'Intertech\Artemonovteam\Components\Calendar' => 'calendar',
             'Intertech\Artemonovteam\Components\UpWorkuuts' => 'upworkouts',
+            'Intertech\Artemonovteam\Components\Trainers' => 'trainers',
+            'Intertech\Artemonovteam\Components\Contacts' => 'contacts',
         ];
     }
 

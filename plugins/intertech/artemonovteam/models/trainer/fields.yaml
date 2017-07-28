@@ -2,28 +2,59 @@
 #  Form Field Definitions
 # ===================================
 
-fields:
-    full_name:
-        label: Имя тренера
-        type: text
-        span: left
-        placeholder: Введите имя тренера
-    
-    is_enabled:
-        label: Отображать
-        type: switch
-        span: right
-        default: true
-        comment: Отображать тренера на сайте
+tabs:
+    fields:
+        full_name:
+            label: Имя тренера
+            type: text
+            span: left
+            placeholder: Введите имя тренера
+            tab: Основная
 
-    description:
-        label: Информация о тренере
-        type: textarea
-        placeholder: Введите информацию о тренере
+        description:
+            label: Информация о тренере
+            type: textarea
+            span: right
+            placeholder: Введите информацию о тренере
+            tab: Основная
+        
+        is_enabled:
+            label: Отображать
+            type: switch
+            span: left
+            default: true
+            comment: Отображать тренера на сайте
+            tab: Основная
 
-    image:
-        label: Изображение
-        type: fileupload
-        mode: image
-        tab: Управление
+        position:
+            label: Должность
+            type: textarea
+            size: middle
+            placeholder: Укажите должность тренера
+            span: left
+            tab: Основная
 
+        image:
+            label: Изображение
+            type: fileupload
+            mode: image
+            tab: Основная
+
+        socials:
+            type: repeater
+            tab: Социальные сети
+            form:
+                fields:
+                    name:
+                        label: Название
+                        type: text
+                    class:
+                        label: Класс
+                        type: dropdown
+                        options:
+                            instagram: Instagram
+                            twitter: Twitter
+                            facebook: Facebook
+                    url:
+                        label: Ссылка
+                        type: text
