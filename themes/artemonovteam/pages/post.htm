@@ -1,7 +1,16 @@
-title = "Posts page"
+title = "Post page"
 url = "/post/:slug"
 layout = "default"
 
-==
-{% put bodyClass %} class="page-home" {% endput %}
+[post]
+partial = "post.htm"
+slug = "{{ :slug }}"
 
+[ssbuttons]
+[ssbuttonsssb]
+
+==
+
+{% component 'post' %}
+
+{% component 'ssbuttons' %}

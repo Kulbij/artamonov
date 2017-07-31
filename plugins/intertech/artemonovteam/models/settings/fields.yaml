@@ -9,6 +9,29 @@ tabs:
           type: richeditor
           comment: Укажите информацию для блока "О нас"
           tab: Основная
+
+      dream_name:
+          tab: Желаемая запись на главной
+          label: Название
+          span: left
+          type: text
+
+      is_dream:
+          label: Отображать
+          type: switch
+          span: right
+          tab: Желаемая запись на главной
+
+      dream_description:
+          tab: Желаемая запись на главной
+          label: Описание
+          type: textarea
+
+      dream_image:
+          label: Изображение
+          type: fileupload
+          mode: image
+          tab: Желаемая запись на главной
       
       is_calendar:
           label: Включить

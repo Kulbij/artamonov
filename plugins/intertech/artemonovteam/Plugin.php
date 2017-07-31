@@ -66,6 +66,10 @@ class Plugin extends PluginBase
             'Intertech\Artemonovteam\Components\UpWorkuuts' => 'upworkouts',
             'Intertech\Artemonovteam\Components\Trainers' => 'trainers',
             'Intertech\Artemonovteam\Components\Contacts' => 'contacts',
+            'Intertech\Artemonovteam\Components\Post' => 'post',
+            'Intertech\Artemonovteam\Components\Posts' => 'posts',
+            'Intertech\Artemonovteam\Components\Dream' => 'dream',
+            'Intertech\Artemonovteam\Components\Programs' => 'programs',
         ];
     }
 

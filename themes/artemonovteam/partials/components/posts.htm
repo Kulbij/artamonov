@@ -1,0 +1,68 @@
+<main>
+    <section class="wrap-blog">
+        <div class="container">
+            <h2>
+                {{ 'Наши новости'|_ }}
+            </h2>
+            {% if posts|length > 0 %}
+                <div class="workouts-list">
+                    <ul>
+                        {% for post in posts %}
+                            <li>
+                                <div class="img-holder">
+                                    <div class="img-opacity" style='background-image: url({{ post.image.thumb('auto', 200) }})'></div>
+                                    <img src="{{ post.image.thumb('auto', 200) }}" alt="foto">
+                                </div>
+                                <h3>{{ post.title }}</h3>
+                                <div class="blog-exerpt">
+                                    <p>{{ post.short_text }}</p>
+                                </div>
+                                <div class="button-work">
+                                    <a href="{{ 'post'|page({ slug: post.slug }) }}">{{ 'Подробнее'|_ }}</a>
+                                </div>
+                                <div class="date-news">
+                                    {{ post.created_at|date('d') }} <span>{{ post.created_at|date('M') }}</span>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% if posts.lastPage > 1 %}
+                    <div class="blog-pagination">
+                        <ul>
+                            {% if posts.lastPage() > 1 %}
+                                <li{{ posts.currentPage() == 1 ? ' class="active"' }}>
+                                    <a href="{{ posts.url(1) }}">1</a>
+                                </li>
+                            {% endif %}
+                            {% if posts.lastPage() > 2 %}
+                                {% for i in from..to %}
+                                    <li{{ posts.currentPage() == i ? ' class="active"' }}>
+                                        <a href="{{ posts.url(i) }}">{{ i }}</a>
+                                    </li>
+                                {% endfor %}
+                            {% endif %}
+                            {% if posts.lastPage() %}
+                                <li{{ posts.currentPage() == posts.lastPage() ? ' class="active"' }}>
+                                    <a href="{{ posts.url(posts.lastPage()) }}">{{ posts.lastPage() }}</a>
+                                </li>
+                            {% endif %}
+                        </ul>
+                        <div class="arrows">
+                            {% if posts.currentPage() != 1 %}
+                                <div class="prev">
+                                    <a href="{{ posts.previousPageUrl() }}" class="fa fa-angle-double-left fa-2x" aria-hidden="true"></a>
+                                </div>
+                            {% endif %}
+                            {% if posts.lastPage > posts.currentPage() %}
+                                <div class="next">
+                                    <a href="{{ posts.nextPageUrl() }}" class="fa fa-angle-double-right fa-2x" aria-hidden="true"></a>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% endif %}
+        </div>
+    </section>
+</main>

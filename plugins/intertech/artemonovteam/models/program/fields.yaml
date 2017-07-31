@@ -39,3 +39,9 @@ fields:
         label: Описание
         type: richeditor
         comment: Описание к посту
+
+    image:
+        label: Изображение
+        type: fileupload
+        mode: image
+        tab: Основная

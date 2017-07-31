@@ -9,3 +9,6 @@
 1.0.4:
      - Create program feedbacks table
      - create_program_feedbacks_table.php
+1.0.5:
+     - Create team table
+     - create_teams_table.php

@@ -1,0 +1,42 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    fist_name:
+        label: Имя
+        type: text
+        span: left
+
+    last_name:
+        label: Фамилия
+        type: text
+        span: right
+
+    email:
+        label: Email
+        type: text
+        span: left
+
+    phone:
+        label: Телефон
+        type: text
+        span: right
+
+    message:
+        label: Сообщение
+        type: textarea
+
+    category:
+        label: Программа
+        type: relation
+
+    created_at:
+        label: Дата создания
+        type: datepicker
+        span: left
+
+    updated_at:
+        label: Последнее обновление
+        type: datepicker
+        span: right

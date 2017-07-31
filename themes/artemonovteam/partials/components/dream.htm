@@ -1,0 +1,18 @@
+{% if dream.is_shop_dream %}
+    <section class="dream">
+        <div class="container">
+            <article>
+                <div class="content">
+                    <h2>{{ dream.dream_name }}</h2>
+                    <p>{{ dream.dream_description|raw|striptags }}</p>
+                </div>
+                <div class="foto">
+                    <div class="img-holder">
+                        <div class="img-opacity" style='background-image: url({{ dream.dream_image.path }})'></div>
+                        <img src="{{ dream.dream_image.path }}" alt="Foto">
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+{% endif %}

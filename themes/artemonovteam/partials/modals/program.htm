@@ -1,0 +1,21 @@
+<div class="modal-form-prog">
+    <div class="close"></div>
+    <h3>{{ 'Программы тренировок дома'|_ }}</h3>
+    <article>
+        <div class="img-holder">
+            <img src="{{ program.image.path }}" alt="img">
+            <div class="img-opacity" style='background-image: url("{{ program.image.path }}")'></div>
+        </div>
+        <p>
+            {{ program.description|raw }}
+        </p>
+    </article>
+    <div class="but">
+        <div class="button-reg">
+            <a>{{ 'Регистрация'|_ }}</a>
+        </div>
+        <div class="button-callback">
+            <a>{{ 'Обратная связь'|_ }}</a>
+        </div>
+    </div>
+</div>  

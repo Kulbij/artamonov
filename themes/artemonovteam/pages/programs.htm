@@ -2,6 +2,9 @@ title = "Programs page"
 url = "/programs"
 layout = "default"
 
-==
-{% put bodyClass %} class="page-home" {% endput %}
+[programs]
+partial = "programs.htm"
 
+==
+
+{% component 'programs' %}

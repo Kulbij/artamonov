@@ -29,5 +29,11 @@ columns:
         label: Видимость
         type: switch
 
+    image:
+        label: Изображение
+        type: partial
+        path: ~/plugins/intertech/artemonovteam/models/program/_image_column.htm
+        sortable: false
+
     sort_order:
         label: Позиция

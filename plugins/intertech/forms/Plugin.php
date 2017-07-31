@@ -116,6 +116,13 @@ class Plugin extends PluginBase
                         'permissions' => ['intertech.forms.*'],
                         'order'       => 300,
                     ],
+                    'teams' => [
+                        'label'       => 'Хочу в команду',
+                        'url'         => Backend::url('intertech/forms/teams'),
+                        'icon'        => 'icon-comment',
+                        'permissions' => ['intertech.forms.*'],
+                        'order'       => 400,
+                    ],
                 ],
             ],
         ];

@@ -1,14 +1,16 @@
 <div class="modal modal-in-item">
     <div class="modal-form-in-item">
         <div class="close"></div>
-        <form action="#" method="get">
+        <form
+            data-request="onSend"
+        >
             <fieldset>
                 <legend>{{ 'Хочу в команду'|_ }}</legend>
                 {% if categories|length > 0 %}
                     <ul class="age-form">
                         {% for category in categories %}
                             <li>
-                                <input type="radio" id="{{ category.slug }}" name="category" value="category" class="checkbox">
+                                <input type="radio" id="{{ category.slug }}" name="category_id" value="{{ category.id }}" class="checkbox">
                                 <label for="{{ category.slug }}">{{ category.name }}</label>
                             </li>
                         {% endfor %}

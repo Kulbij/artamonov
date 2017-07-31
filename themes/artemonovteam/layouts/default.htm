@@ -24,9 +24,11 @@ partial = "team.htm"
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	{% component 'seo' %}
     <meta charset="UTF-8">
+	{% component 'seo' %}
+    <link rel="icon" href="{{ 'assets/img/icon.png'|theme }}" type="image/png" class="">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <script src="https://use.fontawesome.com/6eebe0124d.js"></script>
     <link rel="stylesheet" href="{{ 'assets/css/main.css'|theme }}">
     {% styles %}
 </head>
@@ -144,7 +146,7 @@ partial = "team.htm"
 	        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 	        crossorigin="anonymous"></script>
 	<script src="{{ 'assets/js/app.js'|theme }}"></script>
-	<script src="{{ 'assets/source-js/main.js'|theme }}"></script>
+	<script src="{{ 'assets/js/main.js'|theme }}"></script>
 	{% framework extras %}
     {% scripts %}
 </body>

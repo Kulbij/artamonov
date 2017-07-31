@@ -34,4 +34,14 @@ class Team extends ComponentBase
             'categories' => $categories
         ];
     }
+
+    public function onSend()
+    {
+        $categoryId = post('category_id');
+        $category = Category::find($categoryId);
+
+        if ($category) {
+            
+        }
+    }
 }

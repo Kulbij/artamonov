@@ -58,15 +58,10 @@ class Program extends Model
     /**
      * @var array Relations
      */
-    public $hasOne = [];
-    public $hasMany = [];
     public $belongsTo = [
         'category' => 'Intertech\Artemonovteam\Models\Category'
     ];
-    public $belongsToMany = [];
-    public $morphTo = [];
-    public $morphOne = [];
-    public $morphMany = [];
-    public $attachOne = [];
-    public $attachMany = [];
+    public $attachOne = [
+        'image' => 'System\Models\File',
+    ];
 }

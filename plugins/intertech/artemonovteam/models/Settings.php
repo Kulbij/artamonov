@@ -25,4 +25,11 @@ class Settings extends Model
      * @var string
      */
     public $settingsFields = 'fields.yaml';
+
+    /**
+     * @var array Relations
+     */
+    public $attachOne = [
+        'dream_image' => 'System\Models\File',
+    ];
 }

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Team
+
+# Model Form Field configuration
+form: $/intertech/forms/models/team/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Forms\Models\Team
+
+# Default redirect location
+defaultRedirect: intertech/forms/teams
+
+# Create page
+create:
+    title: Create Team
+    redirect: intertech/forms/teams/update/:id
+    redirectClose: intertech/forms/teams
+
+# Update page
+update:
+    title: Edit Team
+    redirect: intertech/forms/teams
+    redirectClose: intertech/forms/teams
+
+# Preview page
+preview:
+    title: Preview Team
