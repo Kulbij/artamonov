@@ -1,312 +1,36 @@
-subject = "Востановление пароля"
-layout = ""
+subject = "Запрос сброса пароля"
 ==
-<html>
-<head>
-    <meta charset="utf-8">
-    <style>
-        p {
-            color: #282828;
-            font-size: 14px;
-            line-height: 22px;
-            font-weight: 400;
-            font-family: Helvetica, Arial, sans-serif;
-            text-align: left;
-        }
-        h1, h2, h3, h4 {
-            color: #282828;
-            font-family: Helvetica, Arial, sans-serif;
-            text-align: left;
-        }
-        h2 {
-            font-size: 22px;
-            font-weight: 700;
-            line-height: 26px;
-            margin-top: 0;
-        }
-        a {
-            color: #fff;
-            font-size: 14px;
-            line-height: 22px;
-            font-weight: 400;
-            font-family: Helvetica, Arial, sans-serif;
-            margin:1em 0 2em;
-            outline:none;
-            text-decoration:none;
-        }
-        table {
-            border-collapse:collapse;
-            margin:0;
-            padding:0;
-            border: none;
-            width: 100%;
-        }
-        td {
-            text-align: center;
-        }
-        img {
-            border: none;
-            display: inline;
-            vertical-align: bottom;
-            padding: 0;
-            text-align: center;
-        }
-        .page {
-            background-color:#ffffff;
-            border-radius: 2px;
-            margin: auto;
-            width: 580px;
-        }
-        .top-image {}
-        .top-image > tbody > tr > td {
-            padding-top: 46px;
-            padding-right: 17px;
-            padding-bottom: 40px;
-        }
-        .par-1 > tbody > tr > td, .head-1 > tbody > tr > td {
-            padding: 0 46px;
-        }
-        .par-1 p {
-            width: 480px;
-        }
 
-        .main-table {
-            background-color:#fff;
-            height:100%;
-            text-align: center;
-            vertical-align: top;
-            width:100%;
-            padding: 46px 49px 52px;
-        }
-        .main-table > tbody > tr > td {
-            text-align: center;
-        }
-        .main-table > tbody > tr > td > table {
-            text-align: center;
+Привет {{ name }},
 
-        }
-        .space-1 > tbody > tr > td {
-            padding: 19px 18px
-        }
-        .button > tbody > tr > td > table > tbody > tr > td {
-            padding-top:12px;
-            padding-right:18px;
-            padding-bottom:20px;
-            padding-left:18px;
-            color:#84888a;
-            font-family: Helvetica, Arial, sans-serif;
-            font-size:16px;
-            line-height:150%;
-            text-align:center;
-        }
-        .button > tbody > tr > td > table > tbody > tr > td > div {
-            text-align:center;
-            margin:0 auto;
-            margin-bottom:27px;
-        }
-        .footer > tbody > tr > td > table > tbody > tr > td > div {
-            padding: 37px 0;
-        }
-        .footer > tbody > tr > td > p > a {
-            padding:0 10px;
-            color:#282828;
-            text-decoration:none;
-            word-wrap:break-word;
-        }
-        .footer > tbody > .socials > td > p {
-            white-space:nowrap;
+Кто-то запросил сброс пароля для вашей учетной записи, если это было не так, не обращайте внимания на это письмо.
 
-            text-align:center;
-            font-size:14px;
-            line-height:16px;
-            color:#282828;
-            margin: 50px 0 15px;
-        }
-        .footer > tbody > .socials a > img {
-            max-width: 100%;
-        }
-
-        .footer > tbody > .options a {
-            color: #cdd0dc;
-            font-size: 12px;
-            font-weight: 400;
-            line-height: 12px;
-        }
-        .footer > tbody > .options p {
-            margin-top: 0;
-            text-align: center;
-        }
-
-        .socials a {
-            display: inline-block;
-            width: 30px;
-            height: 30px;
-            margin-right: 20px;
-            vertical-align: middle;
-            vertical-align: middle;
-            padding: 0!important;
-        }
-        .socials a:last-child{
-            margin-right: 0;
-        }
+Используйте код активации для восстановления пароля:
+{{ code }}
 
 
-        .logo{
-            display: inline-block;
-            margin: auto;
-        }
+Вы можете использовать следующую ссылку:
+{{ link }}
 
-        .items th, .items td{
 
-            color: #282828;
-            font-size: 14px;
-            font-family: Helvetica, Arial, sans-serif;
-        }
-        .items td {
-            font-weight: 400;
-        }
-    </style>
-</head>
-<body>
-<center>
-    <table class="main-table" align="center" border="0" cellpadding="0" cellspacing="0" height="100%" width="100%" style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;border-style:none;background-color:#fff;height:100%;text-align:center;vertical-align:top;width:100%;padding-top:46px;padding-bottom:52px;padding-right:49px;padding-left:49px;" >
-        <tbody>
-        <tr>
-            <td align="center" style="text-align:center;" >
-                <table class="top-image" style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;text-align:center;" >
-                    <tbody>
-                    <tr>
-                        <td style="text-align:center;padding-top:46px;padding-right:17px;padding-bottom:40px;" >
-                            <center>
-                                <a class="logo" href="{{ url() }}" target="_blank" style="color:#fff;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;outline-style:none;text-decoration:none;display:inline-block;margin-top:auto;margin-bottom:auto;margin-right:auto;margin-left:auto;" >
-                                    <img alt="korkki" src="{{ message.embed('themes/korkki/assets/images/icons/logo.png') }}" width="157" height="35" style="border-style:none;display:inline;vertical-align:bottom;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;" >
-                                </a>
-                            </center>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <table class="page" style="border-width:3px;border-style:solid;border-color:#a1e7ee;border-collapse:collapse;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;background-color:#ffffff;border-radius:2px;margin-top:auto;margin-bottom:auto;margin-right:auto;margin-left:auto;width:580px;text-align:center;" >
-                    <tbody>
-                    <tr>
-                        <td style="text-align:center;" >
-                            <table style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
-                                <tbody>
-                                <tr>
-                                    <td style="text-align:center;" >
-                                        <table class="space-1" style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
-                                            <tbody>
-                                            <tr>
-                                                <td style="text-align:center;padding-top:19px;padding-bottom:19px;padding-right:18px;padding-left:18px;" >
-                                                    <table style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
-                                                        <tbody>
-                                                        <tr>
-                                                            <td style="text-align:center;" >
-                                                                <span></span>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+---
+Это автоматическое сообщение. Пожалуйста, не отвечайте на него.
 
-                                        <table class="head-1" style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
-                                            <tbody>
-                                                <tr>
-                                                    <td valign="top" style="text-align:center;padding-top:0;padding-bottom:0;padding-right:46px;padding-left:46px;" >
-                                                        <table style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
-                                                            <tbody>
-                                                            <tr>
-                                                                <td style="text-align:center;" >
-                                                                    <h2 style="color:#282828;font-family:Helvetica, Arial, sans-serif;text-align:left;font-size:22px;font-weight:700;line-height:26px;margin-top:0;" >
-                                                                        Запрошенный сброс пароля
-                                                                    </h2>
-                                                                    <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" >Здравствуйте {{ name }},</p>
+==
 
-                                                                    <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" >Кто-то запросил сброс пароля для вашей учетной записи, если это не вы, пожалуйста, проигнорируйте это письмо.</p>
-                                                                    
-                                                                    <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>Используйте этот код активации для восстановления пароля:</b> {{ code }}</p>
-                                                                    <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>Вы можете использовать следующую ссылку:</b> <a href="{{ link }}" style="color:#fff;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;margin-top:1em;margin-bottom:2em;margin-right:0;margin-left:0;outline-style:none;text-decoration:none;" >{{ link }}</a></p>
+<p>Привет {{ name }},</p>
 
-                                                                    <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" >Это автоматическое сообщение. Пожалуйста, не отвечайте на него.</p>
-                
-                                                                    <table class="space-1" style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
-                                                                        <tbody>
-                                                                        <tr>
-                                                                            <td style="text-align:center;padding-top:19px;padding-bottom:19px;padding-right:18px;padding-left:18px;" >
-                                                                                <table style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
-                                                                                    <tbody>
-                                                                                    <tr>
-                                                                                        <td style="text-align:center;" >
-                                                                                            <span></span>
-                                                                                        </td>
-                                                                                    </tr>
-                                                                                    </tbody>
-                                                                                </table>
-                                                                            </td>
-                                                                        </tr>
-                                                                        </tbody>
-                                                                    </table>
-                                                                </td>
-                                                            </tr>
-                                                            </tbody>
-                                                        </table>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <table class="space-1" style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
-                                            <tbody>
-                                            <tr>
-                                                <td style="text-align:center;padding-top:19px;padding-bottom:19px;padding-right:18px;padding-left:18px;" >
-                                                    <table style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
-                                                        <tbody>
-                                                        <tr>
-                                                            <td style="text-align:center;" >
-                                                                <span></span>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
+<p>Кто-то запросил сброс пароля для вашей учетной записи, если это было не так, не обращайте внимания на это письмо.</p>
 
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-                <table class="footer" style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;text-align:center;" >
-                    <tbody>
-                    <tr class="socials">
-                        <td style="text-align:center;" >
-                            <p style="font-weight:400;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-align:center;font-size:14px;line-height:16px;color:#282828;margin-top:50px;margin-bottom:15px;margin-right:0;margin-left:0;" >
-                                {% for social in socials.socials %}
-                                    {% if social.icon %}
-                                    <a href="{{ social.url }}" target="_blank" style="font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;margin-top:1em;margin-bottom:2em;margin-left:0;outline-style:none;display:inline-block;width:30px;height:30px;margin-right:20px;vertical-align:middle;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;color:#282828;text-decoration:none;word-wrap:break-word;" >
-                                        <img src="{{ message.embed("themes/korkki/assets/images/icons/#{social.icon}") }}" style="border-style:none;display:inline;vertical-align:bottom;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;max-width:100%;" />
-                                    </a>
-                                    {% endif %}
-                                {% endfor %}
+<p>
+    Используйте код активации для восстановления пароля:<br />
+    {{ code }}
+</p>
 
-                            </p>
+<p>
+    Вы можете использовать следующую ссылку:<br />
+    <a href="{{ link }}">{{ link }}</a>
+</p>
 
-                        </td>
-                    </tr>
-
-                    </tbody>
-                </table>
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</center>
-</body>
-</html>
+<hr />
+<p>Это автоматическое сообщение. Пожалуйста, не отвечайте на него.</p>
