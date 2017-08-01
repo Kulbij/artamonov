@@ -297,12 +297,12 @@ class Account extends ComponentBase
             $message->to($user->email, $user->first_name . ' ' . $user->last_name);
         });
 
-        Mail::send('rainlab.user::mail.register_user', [
-            'user' => $user,
-            'date' => Carbon::now()->format('Y-m-d H:i')
-        ], function($message) use ($user) {
-            $message->to(MailSetting::get('sender_email'), MailSetting::get('sender_name'));
-        });
+        // Mail::send('rainlab.user::mail.register_user', [
+        //     'user' => $user,
+        //     'date' => Carbon::now()->format('Y-m-d H:i')
+        // ], function($message) use ($user) {
+        //     $message->to(MailSetting::get('sender_email'), MailSetting::get('sender_name'));
+        // });
     }
 
     /**

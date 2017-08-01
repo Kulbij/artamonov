@@ -11,6 +11,8 @@ use Intertech\Forms\Models\Team as ModelTeam;
 use Intertech\Artemonovteam\Models\Category;
 use Intertech\Forms\Traits\ComponentsTrait;
 
+use Carbon\Carbon;
+
 class Team extends ComponentBase
 {
     use ComponentsTrait;
@@ -65,6 +67,7 @@ class Team extends ComponentBase
             $team->save();
 
             if ($team) {
+                $this->sendMail($team);
                 Flash::success('Форма успешнон отправлена');
 
                 return Redirect::to(Request::url());
@@ -72,5 +75,15 @@ class Team extends ComponentBase
         }
 
         Flash::error('Ошыбка формы');
+    }
+
+    public function sendMail($team)
+    {
+        Mail::send('Intertech.forms::mail.team_admin', [
+            'team' => $team,
+            'date' => Carbon::now()->format('Y-m-d H:i')
+        ], function($message) use ($user) {
+            $message->to($team->email, $team->first_name . ' ' . $team->last_name)->subject('Хочу в команду');
+        });\
     }
 }
