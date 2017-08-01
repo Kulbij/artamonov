@@ -1,5 +1,6 @@
 <?php namespace Intertech\Forms\Components;
 
+use Mail;
 use Lang;
 use Flash;
 use Request;
