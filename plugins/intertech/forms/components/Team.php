@@ -84,6 +84,6 @@ class Team extends ComponentBase
             'date' => Carbon::now()->format('Y-m-d H:i')
         ], function($message) use ($user) {
             $message->to($team->email, $team->first_name . ' ' . $team->last_name)->subject('Хочу в команду');
-        });\
+        });
     }
 }
