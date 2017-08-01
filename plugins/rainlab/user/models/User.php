@@ -56,7 +56,8 @@ class User extends UserBase
         'email',
         'password',
         'password_confirmation',
-        'phone'
+        'phone',
+        'patronymic'
     ];
 
     /**

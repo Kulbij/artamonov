@@ -82,10 +82,7 @@ partial = "account.htm"
                 </a>
             </div>
             <div class="login-f">
-                <p>{{ 'Войти через Facebook'|_ }}</p>
-            </div>
-            <div class="login-i">
-                <p>{{ 'Войти через Instagram'|_ }}</p>
+                <a href="/auth/facebook">{{ 'Войти через Facebook'|_ }}</a>
             </div>
             <form
                 data-request="account::onSignin"
@@ -95,7 +92,7 @@ partial = "account.htm"
             >
                 <ul>
                     <li>
-                        <input type="text" name="email" value="" placeholder="{{ 'Почта'|_ }}" data-validate="email">
+                        <input type="text" id="meil" name="email" value="" placeholder="{{ 'Почта'|_ }}" data-validate="email">
                         <div class="error-text" data-validate-for="email"></div>
                     </li>
                     <li>
@@ -104,10 +101,12 @@ partial = "account.htm"
                     </li>
                     <input type="submit" value="{{ 'Войти'|_ }}" class="in-ok">
                 </ul>
-                <input type="submit" value="{{ 'Отправить'|_ }}" class="butt">
             </form>
             <div class="button-reg">
                 <a>{{ 'Зарегистрироваться'|_ }}</a>
+            </div>
+            <div class="button-forgot">
+                <a href="{{ 'forgot-password'|page }}">{{ 'Забыли пароль?'|_ }}</a>
             </div>
         </div>
     </div>
@@ -117,7 +116,7 @@ partial = "account.htm"
             <div class="close"></div>
             <form
                 data-request="account::onRegister"
-                data-request-data="redirect: '/catalog/account'"
+                data-request-data="redirect: '/account'"
                 data-request-flash
                 data-request-validate
             >
@@ -126,23 +125,23 @@ partial = "account.htm"
                     <p>{{ 'Ваш возраст'|_ }}</p>
                     <ul class="age-form">
                         <li>
-                            <input type="radio" id="check1" name="age" value="18-24" class="checkbox">
+                            <input type="radio" id="check1" name="patronymic" value="18-24" class="checkbox">
                             <label for="check1">18-24</label>
                         </li>
                         <li>
-                            <input type="radio" id="check2" name="age" value="25-30" class="checkbox">
+                            <input type="radio" id="check2" name="patronymic" value="25-30" class="checkbox">
                             <label for="check2">25-30</label>
                         </li>
                         <li>
-                            <input type="radio" id="check3" name="age" value="31-35" class="checkbox">
+                            <input type="radio" id="check3" name="patronymic" value="31-35" class="checkbox">
                             <label for="check3">31-35</label>
                         </li>
                         <li>
-                            <input type="radio" id="check4" name="age" value="36-45" class="checkbox">
+                            <input type="radio" id="check4" name="patronymic" value="36-45" class="checkbox">
                             <label for="check4">36-45</label>
                         </li>
                         <li>
-                            <input type="radio" id="check5" name="age" value="46-55" class="checkbox">
+                            <input type="radio" id="check5" name="patronymic" value="46-55" class="checkbox">
                             <label for="check5">46-55</label>
                         </li>
                     </ul>

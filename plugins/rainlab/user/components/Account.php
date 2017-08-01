@@ -380,10 +380,6 @@ class Account extends ComponentBase
             $data = post();
             $rules = $this->updateUserRules($user);
 
-            if (empty(post('old_password'))) {
-                
-            }
-
             if (post('old_password')) {
                 $rules['old_password'] = 'required|between:6,255';
                 $rules['password'] = 'required|between:6,255|confirmed';

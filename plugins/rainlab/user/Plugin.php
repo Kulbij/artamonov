@@ -36,6 +36,13 @@ class Plugin extends PluginBase
         });
 
         /*
+         * Social lite
+         */
+        App::register('\Laravel\Socialite\SocialiteServiceProvider');
+        // App::register('\SocialiteProviders\Manager\ServiceProvider');
+        $alias->alias('Socialite', '\Laravel\Socialite\Facades\Socialite');
+
+        /*
          * Apply user-based mail blocking
          */
         Event::listen('mailer.prepareSend', function($mailer, $view, $message){
