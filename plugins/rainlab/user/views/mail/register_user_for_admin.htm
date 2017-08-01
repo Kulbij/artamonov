@@ -226,9 +226,9 @@ layout = ""
                                                                     <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>Дата регистрации:</b> {{ date }}</p>
                                                                     <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>Имя:</b> {{ user.first_name }}</p>
                                                                     <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>Фамилия:</b> {{ user.last_name }}</p>
-                                                                    <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>Очество:</b> {{ user.patronymic }}</p>
+                                                                    <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>Возраст:</b> {{ user.patronymic }}</p>
                                                                     <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>E-mail:</b> {{ data.email }}</p>
-                                                                    <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>Телефон:</b> {{ data.phone1 }}</p>
+                                                                    <p style="color:#282828;font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;text-align:left;" ><b>Телефон:</b> {{ data.phone }}</p>
                 
                                                                     <table class="space-1" style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;" >
                                                                         <tbody>
@@ -279,26 +279,6 @@ layout = ""
                             </table>
                         </td>
                     </tr>
-                    </tbody>
-                </table>
-                <table class="footer" style="border-collapse:collapse;margin-top:0;margin-bottom:0;margin-right:0;margin-left:0;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;border-style:none;width:100%;text-align:center;" >
-                    <tbody>
-                    <tr class="socials">
-                        <td style="text-align:center;" >
-                            <p style="font-weight:400;font-family:Helvetica, Arial, sans-serif;white-space:nowrap;text-align:center;font-size:14px;line-height:16px;color:#282828;margin-top:50px;margin-bottom:15px;margin-right:0;margin-left:0;" >
-                                {% for social in socials.socials %}
-                                    {% if social.icon %}
-                                    <a href="{{ social.url }}" target="_blank" style="font-size:14px;line-height:22px;font-weight:400;font-family:Helvetica, Arial, sans-serif;margin-top:1em;margin-bottom:2em;margin-left:0;outline-style:none;display:inline-block;width:30px;height:30px;margin-right:20px;vertical-align:middle;padding-top:0 !important;padding-bottom:0 !important;padding-right:0 !important;padding-left:0 !important;color:#282828;text-decoration:none;word-wrap:break-word;" >
-                                        <img src="{{ message.embed("themes/korkki/assets/images/icons/#{social.icon}") }}" style="border-style:none;display:inline;vertical-align:bottom;padding-top:0;padding-bottom:0;padding-right:0;padding-left:0;text-align:center;max-width:100%;" />
-                                    </a>
-                                    {% endif %}
-                                {% endfor %}
-
-                            </p>
-
-                        </td>
-                    </tr>
-
                     </tbody>
                 </table>
             </td>
