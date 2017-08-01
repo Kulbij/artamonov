@@ -3,7 +3,7 @@
 # ===================================
 
 fields:
-    fist_name:
+    first_name:
         label: Имя
         type: text
         span: left
@@ -23,7 +23,7 @@ fields:
         type: text
         span: right
 
-    message:
+    massage:
         label: Сообщение
         type: textarea
 

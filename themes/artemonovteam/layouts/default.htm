@@ -7,7 +7,7 @@ partial = "pages.htm"
 [socials]
 partial = "socials.htm"
 
-[askquestion]
+[askQuestion]
 partial = "askquestion.htm"
 
 [contacts]
@@ -18,6 +18,13 @@ partial = "footer.htm"
 
 [formTeam]
 partial = "team.htm"
+
+[productFeedback]
+
+[account]
+partial = "account.htm"
+
+[session]
 
 ==
 
@@ -44,8 +51,22 @@ partial = "team.htm"
                     <img src="{{ 'assets/img/logo.png'|theme }}" alt="Logo">
                 </a>
             </div>
-            <div class="button-in">
-                <a href="#">{{ 'Войти'|_ }}</a>
+            <div class="button-item">
+                <div class="but-bloc">
+                    {% if not user %}
+                    <div class="in-t">{{ 'Войти'|_ }}</div>
+                    <div class="button-in">
+                        <a href="#" class="in"><img src="{{ 'assets/img/web-log-in.png'|theme }}" alt=""></a>
+                    </div>
+                    {% else %}
+                    <div class="profile">
+                        <a href="{{ 'account'|page }}">{{ 'Профиль'|_ }}</a>
+                    </div>
+                    <div class="button-out">
+                        <a href="#" data-request="session::onLogout" data-request-data="redirect: '/'" class="out"><img src="{{ 'assets/img/web-log-out.png'|theme }}" alt=""></a>
+                    </div>
+                    {% endif %}
+                </div>
             </div>
         </div>
     </div>
@@ -57,27 +78,36 @@ partial = "team.htm"
             <div class="close"></div>
             <div class="logo">
                 <a href="index.html">
-                    <img src="img/logo.png" alt="Logo">
+                    <img src="{{ 'assets/img/logo.png'|theme }}" alt="Logo">
                 </a>
             </div>
             <div class="login-f">
-                <p>Войти через Facebook</p>
+                <p>{{ 'Войти через Facebook'|_ }}</p>
             </div>
             <div class="login-i">
-                <p>Войти через Instagram</p>
+                <p>{{ 'Войти через Instagram'|_ }}</p>
             </div>
-            <form action="#" method="get">
+            <form
+                data-request="account::onSignin"
+                data-request-data="redirect: '/account'"
+                data-request-flash
+                data-request-validate
+            >
                 <ul>
                     <li>
-                        <input type="text" id="pass" name="pass" placeholder="Пароль">
+                        <input type="text" name="email" value="" placeholder="{{ 'Почта'|_ }}" data-validate="email">
+                        <div class="error-text" data-validate-for="email"></div>
                     </li>
                     <li>
-                        <input type="text" id="meil" name="meil" placeholder="Почта">
+                        <input type="password" id="pass" name="password" placeholder="{{ 'Пароль'|_ }}">
+                        <div class="error-text" data-validate-for="password"></div>
                     </li>
+                    <input type="submit" value="{{ 'Войти'|_ }}" class="in-ok">
                 </ul>
+                <input type="submit" value="{{ 'Отправить'|_ }}" class="butt">
             </form>
             <div class="button-reg">
-                <a>Зарегистрироваться</a>
+                <a>{{ 'Зарегистрироваться'|_ }}</a>
             </div>
         </div>
     </div>
@@ -85,10 +115,15 @@ partial = "team.htm"
     <div class="modal modal-reg">
         <div class="modal-form-reg">
             <div class="close"></div>
-            <form action="#" method="get">
+            <form
+                data-request="account::onRegister"
+                data-request-data="redirect: '/catalog/account'"
+                data-request-flash
+                data-request-validate
+            >
                 <fieldset>
-                    <legend>Регистрация</legend>
-                    <p>Ваш возраст</p>
+                    <legend>{{ 'Регистрация'|_ }}</legend>
+                    <p>{{ 'Ваш возраст'|_ }}</p>
                     <ul class="age-form">
                         <li>
                             <input type="radio" id="check1" name="age" value="18-24" class="checkbox">
@@ -113,20 +148,32 @@ partial = "team.htm"
                     </ul>
                     <ul class="contacts-form">
                         <li>
-                            <input type="text" id="name" name="name" placeholder="Имя" required>
+                            <input type="text" id="name" name="first_name" placeholder="{{ 'Имя'|_ }}" required>
+                            <div class="error-text" data-validate-for="first_name"></div>
                         </li>
                         <li>
-                            <input type="text" id="last-name" name="last-name" placeholder="Фамилия" required>
+                            <input type="text" id="last-name" name="last_name" placeholder="{{ 'Фамилия'|_  }}" required>
+                            <div class="error-text" data-validate-for="last_name"></div>
                         </li>
                         <li>
-                            <input type="text" id="phone" name="phone" placeholder="Телефон" required>
+                            <input type="text" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}" required>
+                            <div class="error-text" data-validate-for="phone"></div>
                         </li>
                         <li>
-                            <input type="text" id="meil" name="meil" placeholder="Почта">
+                            <input type="text" id="email" name="email" placeholder="{{ 'Почта'|_  }}" required>
+                            <div class="error-text" data-validate-for="email"></div>
+                        </li>
+                        <li>
+                            <input type="password" id="password" name="password" placeholder="{{ 'Пароль'|_  }}" required>
+                            <div class="error-text" data-validate-for="password"></div>
+                        </li>
+                        <li>
+                            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="{{ 'Подтвирждение пароля'|_  }}" required>
+                            <div class="error-text" data-validate-for="password_confirmation"></div>
                         </li>
                     </ul>
                 </fieldset>
-                <input type="submit" value="Отправить" class="butt">
+                <input type="submit" value="{{ 'Отправить'|_ }}" class="butt">
             </form>
         </div>
     </div>
@@ -147,6 +194,11 @@ partial = "team.htm"
 	        crossorigin="anonymous"></script>
 	<script src="{{ 'assets/js/app.js'|theme }}"></script>
 	<script src="{{ 'assets/js/main.js'|theme }}"></script>
+    <script>
+        $('.button-change-contact').on('click', function() {
+            $('input[type="password"]').val('');
+        });
+    </script>
 	{% framework extras %}
     {% scripts %}
 </body>

@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/intertech/forms/models/team/columns.yaml
+list: $/intertech/forms/models/askquestion/columns.yaml
 
 # Model Class name
-modelClass: Intertech\Forms\Models\Team
+modelClass: Intertech\Forms\Models\AskQuestion
 
 # List Title
-title: Manage Teams
+title: Manage Ask Questions
 
 # Link URL for each record
-recordUrl: intertech/forms/teams/update/:id
+recordUrl: intertech/forms/askquestions/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records

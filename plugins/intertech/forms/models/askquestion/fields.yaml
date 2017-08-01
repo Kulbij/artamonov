@@ -3,33 +3,18 @@
 # ===================================
 
 fields:
-    first_name:
+    full_name:
         label: Имя
         type: text
         span: left
-
-    last_name:
-        label: Фамилия
-        type: text
-        span: right
-
     email:
-        label: Email
-        type: text
-        span: left
-
-    phone:
-        label: Телефон
+        label: E-mail
         type: text
         span: right
 
-    message:
+    massage:
         label: Сообщение
         type: textarea
-
-    program:
-        label: Программа
-        type: relation
 
     created_at:
         label: Дата создания

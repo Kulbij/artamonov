@@ -3,12 +3,16 @@
         {{ 'Задать вопрос'|_ }}
     </h2>
     <form
-        action="#"
-        method="get"
+        data-request="onSend"
+        data-request-flash
+        data-request-validate
     >
-        <input type="text" id="name" name="name" placeholder="{{ 'Имя'|_ }}">
+        <input type="text" id="name" name="full_name" placeholder="{{ 'Имя'|_ }}">
+        <div class="error-text" data-validate-for="full_name"></div>
         <input type="text" id="email" name="email" placeholder="{{ 'Почта'|_ }}">
-        <textarea name="message" id="#message" placeholder="{{ 'Сообщение'|_ }}"></textarea>
+        <div class="error-text" data-validate-for="email"></div>
+        <textarea name="massage" id="#message" placeholder="{{ 'Сообщение'|_ }}"></textarea>
+        <div class="error-text" data-validate-for="massage"></div>
         <input type="submit" value="{{ 'Отправить'|_ }}" id="foot-button">
     </form>
 </div>

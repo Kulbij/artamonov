@@ -8,29 +8,18 @@ columns:
         searchable: true
         invisible: true
 
-    first_name:
-        label: Имя
-        searchable: true
-
-    last_name:
-        label: Фамилия
-        searchable: true
-  
-    phone:
-        label: Телефон
+    full_name:
+        label: Полное имя
         searchable: true
 
     email:
         label: Email
         searchable: true
 
-    
-
-    category:
-        label: Програма
-        relation: category
-        select: name
-        nameFrom: name
+    massage:
+        label: Сообщение
+        select: left(massage, 100)
+        searchable: true
 
     created_at:
         label: Дата создания

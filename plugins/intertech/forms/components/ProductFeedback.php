@@ -1,15 +1,11 @@
 <?php namespace Intertech\Forms\Components;
 
-use Lang;
 use Flash;
 use Request;
 use Redirect;
-use Validator;
-use ValidationException;
-use RainLab\User\Models\User;
 use Cms\Classes\ComponentBase;
-use Feegleweb\Octoshop\Models\Product as ShopProduct;
-use Feegleweb\Catalog\Models\Product as CatalogProduct;
+use Intertech\Artemonovteam\Models\Program;
+use Intertech\Forms\Models\ProgramFeedback;
 use Intertech\Forms\Traits\ComponentsTrait;
 
 class ProductFeedback extends ComponentBase
@@ -39,81 +35,36 @@ class ProductFeedback extends ComponentBase
         return [];
     }
 
-    /**
-     * Translations for attribute name
-     */
-    public function attributeNames()
+    public function onShowForm()
     {
-        return [
-            'full_name' => Lang::get('rainlab.user::lang.register.validation.first_name'),
-            'email' => Lang::get('rainlab.user::lang.register.validation.email'),
-        ];
+        $id = post('id');
+
+        $program = Program::find($id);
+
+        if ($program) {
+            $this->page['formprogram'] = $program;
+        }
     }
 
-    /**
-     * Send feedback
-     * This function for send request (page product)
-     * end create in DB
-     */
-    public function onSendFeedback()
+    public function onSend()
     {
-        try {
-            if ($productId = post('product_id')) {
-                $type = $this->getUserType(post('type'));
+        $id = post('program_id');
 
-                if ($type == 1) {
-                    $product = CatalogProduct::find($productId);
-                }
+        $program = Program::find($id);
 
-                if ($type == 2) {
-                    $product = ShopProduct::find($productId);
-                }
+        if ($program) {
+            $team = new ProgramFeedback;
 
-                if (!$product) {
-                    Flash::error('Даного продукта не существует');
-                }
+            $team->fill(post());
+            $team->save();
+
+            if ($team) {
+                Flash::success('Форма успешнон отправлена');
+
+                return Redirect::to(Request::url());
             }
-
-            $rules = [
-                'full_name' => 'required',
-                'email' => 'required|min:6|email'
-            ];
-
-            $validation = Validator::make(post(), $rules, [], $this->attributeNames());
-            if ($validation->fails()) {
-                throw new ValidationException($validation);
-            }
-
-            $product->feedbacks()->create([
-                'full_name' => post('full_name'),
-                'email' => post('email'),
-                'message' => post('message')
-            ]);
-
-            Flash::success(Lang::get('intertech.forms::lang.callback.success_send_feedback'));
-            
-            return Redirect::to(Request::url());
-        }
-        catch (Exception $ex) {
-            if (Request::ajax()) throw $ex;
-            else Flash::error($ex->getMessage());
-        }
-    }
-
-    /**
-     * Send email after create callback in DB
-     */
-    public function sendMail()
-    {
-
-    }
-
-    public function getUserType($type = 1)
-    {
-        if ($type != User::TYPE_WHOLESALE && $type != User::TYPE_RETAIL) {
-            $type = User::TYPE_WHOLESALE;
         }
 
-        return $type;
+        Flash::error('Ошыбка формы');
     }
 }

@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Ask Question
+
+# Model Form Field configuration
+form: $/intertech/forms/models/askquestion/fields.yaml
+
+# Model Class name
+modelClass: Intertech\Forms\Models\AskQuestion
+
+# Default redirect location
+defaultRedirect: intertech/forms/askquestions
+
+# Create page
+create:
+    title: Create Ask Question
+    redirect: intertech/forms/askquestions/update/:id
+    redirectClose: intertech/forms/askquestions
+
+# Update page
+update:
+    title: Edit Ask Question
+    redirect: intertech/forms/askquestions
+    redirectClose: intertech/forms/askquestions
+
+# Preview page
+preview:
+    title: Preview Ask Question

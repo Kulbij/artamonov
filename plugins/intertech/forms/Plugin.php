@@ -59,7 +59,8 @@ class Plugin extends PluginBase
             'Intertech\Forms\Components\Callback' => 'callback',
             'Intertech\Forms\Components\ProductFeedback' => 'productFeedback',
             'Intertech\Forms\Components\Feedback' => 'feedback',
-            'Intertech\Forms\Components\Team' => 'formTeam'
+            'Intertech\Forms\Components\Team' => 'formTeam',
+            'Intertech\Forms\Components\AskQuestion' => 'askQuestion',
         ];
     }
 
@@ -122,6 +123,13 @@ class Plugin extends PluginBase
                         'icon'        => 'icon-comment',
                         'permissions' => ['intertech.forms.*'],
                         'order'       => 400,
+                    ],
+                    'teams' => [
+                        'label'       => 'Задать вопрос',
+                        'url'         => Backend::url('intertech/forms/askquestions'),
+                        'icon'        => 'icon-comment',
+                        'permissions' => ['intertech.forms.*'],
+                        'order'       => 500,
                     ],
                 ],
             ],

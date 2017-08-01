@@ -2,7 +2,9 @@
     <div class="modal-form-in-item">
         <div class="close"></div>
         <form
-            data-request="onSend"
+            data-request="formTeam::onSend"
+            data-request-flash
+            data-request-validate
         >
             <fieldset>
                 <legend>{{ 'Хочу в команду'|_ }}</legend>
@@ -30,12 +32,12 @@
                         <div class="error-text" data-validate-for="phone"></div>
                     </li>
                     <li>
-                        <input type="text" id="meil" name="meil" placeholder="{{ 'Почта'|_ }}">
-                        <div class="error-text" data-validate-for="meil"></div>
+                        <input type="text" id="email" name="email" placeholder="{{ 'Почта'|_ }}">
+                        <div class="error-text" data-validate-for="email"></div>
                     </li>
                     <li class="question">
-                        <textarea name="question" id="question" placeholder="{{ 'Занимались ли ранее каким-то спортом? Каким?'|_ }}"></textarea>
-                        <div class="error-text" data-validate-for="question"></div>
+                        <textarea name="massage" id="massage" placeholder="{{ 'Занимались ли ранее каким-то спортом? Каким?'|_ }}"></textarea>
+                        <div class="error-text" data-validate-for="massage"></div>
                     </li>
                 </ul>
             </fieldset>

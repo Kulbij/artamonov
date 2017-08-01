@@ -4,35 +4,29 @@ use Model;
 use October\Rain\Database\Traits\Validation;
 
 /**
- * ProgramFeedback Model
+ * AskQuestion Model
  */
-class ProgramFeedback extends Model
+class AskQuestion extends Model
 {
     use Validation;
 
     /**
      * @var string The database table used by the model.
      */
-    public $table = 'intertech_forms_program_feedbacks';
+    public $table = 'intertech_forms_ask_questions';
 
     public $timestamps = true;
 
     public $rules = [
-        'first_name' => 'required',
-        'last_name' => 'required',
-        'phone' => 'required',
+        'full_name' => 'required',
         'email' => 'required|email',
-        'message' => 'required',
-        'program' => 'required',
+        'massage' => 'required'
     ];
 
     public $attributeNames = [
-        'first_name' => 'Имя',
-        'last_name' => 'Фамилия',
-        'phone' => 'Телефон',
+        'full_name' => 'Полное имя',
         'email' => 'Email',
-        'message' => 'Сообщение',
-        'program' => 'Программа',
+        'massage' => 'Сообщение'
     ];
 
     /**
@@ -44,12 +38,9 @@ class ProgramFeedback extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'phone',
+        'full_name',
         'email',
-        'message',
-        'program_id'
+        'massage'
     ];
 
     /**
@@ -57,11 +48,7 @@ class ProgramFeedback extends Model
      */
     public $hasOne = [];
     public $hasMany = [];
-    public $belongsTo = [
-        'program' => ['Intertech\Artemonovteam\Models\Program',
-            'table' => 'intertech_artemonovteam_programs'
-        ]
-    ];
+    public $belongsTo = [];
     public $belongsToMany = [];
     public $morphTo = [];
     public $morphOne = [];

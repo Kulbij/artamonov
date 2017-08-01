@@ -48,7 +48,8 @@ class Team extends Model
         'last_name',
         'phone',
         'email',
-        'massage'
+        'massage',
+        'category_id'
     ];
 
     /**

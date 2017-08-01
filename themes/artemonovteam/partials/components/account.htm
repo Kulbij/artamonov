@@ -1,0 +1,85 @@
+<main>
+    <section class="user">
+        <div class="container">
+            <div class="content">
+                <h2>
+                    {{ 'Личная информация'|_ }}
+                </h2>
+                <ul>
+                    <li>
+                        <p>{{ 'Имя'|_ }}:</p>
+                        <div class="first-name">
+                            {{ user.first_name }}
+                        </div>
+                    </li>
+                    <li>
+                        <p>{{ 'Фамилия'|_ }}:</p>
+                        <div class="last-name">
+                            {{ user.last_name }}
+                        </div>
+                    </li>
+                    <li>
+                        <p>{{ 'Телефон'|_ }}:</p>
+                        <div class="my-phone">
+                            {{ user.phone }}
+                        </div>
+                    </li>
+                    <li>
+                        <p>{{ 'Почта'|_ }}:</p>
+                        <div class="my-email">
+                            {{ user.email }}
+                        </div>
+                    </li>
+                </ul>
+                <div class="button-change-contact">{{ 'Изменить'|_ }}</div>
+            </div>
+        </div>
+    </section>
+    <div class="modal modal-change-contact">
+        <div class="modal-form-change-contact">
+            <div class="close"></div>
+            <form
+                data-request="account::onUpdate"
+                data-request-flash
+                data-request-validate
+            >
+                <fieldset>
+                    <legend>{{ 'Внести изменения'|_ }}</legend>
+                    <ul class="contacts-form">
+                        <li>
+                            <input type="text" id="name" name="first_name" value="{{ user.first_name
+                             }}" placeholder="{{ 'Имя'|_ }}" required>
+                            <div class="error-text" data-validate-for="first_name"></div>
+                        </li>
+                        <li>
+                            <input type="text" id="last-name" name="last_name" value="{{ user.last_name
+                             }}" placeholder="{{ 'Фамилия'|_ }}" required>
+                            <div class="error-text" data-validate-for="last_name"></div>
+                        </li>
+                        <li>
+                            <input type="text" id="phone" name="phone" value="{{ user.phone }}" placeholder="{{ 'Телефон'|_ }}" required>
+                            <div class="error-text" data-validate-for="phone"></div>
+                        </li>
+                        <li>
+                            <input type="text" id="meil" name="email" value="{{ user.email }}" placeholder="{{ 'Почта'|_ }}">
+                            <div class="error-text" data-validate-for="email"></div>
+                        </li>
+                        <li>
+                            <input type="password" name="old_password" placeholder="{{ 'Старый пароль'|_ }}">
+                            <div class="error-text" data-validate-for="old_password"></div>
+                        </li>
+                        <li>
+                            <input type="password" id="password" name="password" value="" placeholder="{{ 'Новый пароль'|_ }}">
+                            <div class="error-text" data-validate-for="password"></div>
+                        </li>
+                        <li>
+                            <input type="password" id="password_confirmation" name="password_confirmation" value="" placeholder="{{ 'Подтвирждение нового'|_ }}">
+                            <div class="error-text" data-validate-for="password_confirmation"></div>
+                        </li>
+                    </ul>
+                </fieldset>
+                <input type="submit" value="{{ 'Отправить'|_ }}" class="butt" id="button-change-contact">
+            </form>
+        </div>
+    </div>
+</main>

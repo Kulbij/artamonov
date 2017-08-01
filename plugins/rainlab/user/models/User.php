@@ -20,10 +20,13 @@ class User extends UserBase
      * Validation rules
      */
     public $rules = [
+        'first_name' => 'required',
+        'last_name' => 'required',
         'email'    => 'required|between:6,255|email|unique:users',
         'username' => 'required|between:2,255|unique:users',
         'password' => 'required:create|between:4,255|confirmed',
-        'password_confirmation' => 'required_with:password|between:4,255'
+        'password_confirmation' => 'required_with:password|between:4,255',
+        'phone' => 'required'
     ];
 
     /**
@@ -48,12 +51,12 @@ class User extends UserBase
     protected $fillable = [
         'first_name',
         'last_name',
-        'surname',
         'login',
         'username',
         'email',
         'password',
-        'password_confirmation'
+        'password_confirmation',
+        'phone'
     ];
 
     /**

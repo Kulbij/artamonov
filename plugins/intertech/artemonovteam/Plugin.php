@@ -59,7 +59,6 @@ class Plugin extends PluginBase
             'Intertech\Artemonovteam\Components\Cover' => 'cover',
             'Intertech\Artemonovteam\Components\Pages' => 'pages',
             'Intertech\Artemonovteam\Components\Socials' => 'socials',
-            'Intertech\Artemonovteam\Components\AskQuestion' => 'askquestion',
             'Intertech\Artemonovteam\Components\Footer' => 'footer',
             'Intertech\Artemonovteam\Components\Categories' => 'categories',
             'Intertech\Artemonovteam\Components\Calendar' => 'calendar',

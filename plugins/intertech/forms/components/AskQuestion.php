@@ -1,7 +1,11 @@
-<?php namespace Intertech\Artemonovteam\Components;
+<?php namespace Intertech\Forms\Components;
 
+use Flash;
+use Request;
+use Redirect;
 use Cms\Classes\ComponentBase;
-use Intertech\Artemonovteam\Traits\ComponentsTrait;
+use Intertech\Forms\Models\AskQuestion as ModelAskQuestion;
+use Intertech\Forms\Traits\ComponentsTrait;
 
 class AskQuestion extends ComponentBase
 {
@@ -30,5 +34,21 @@ class AskQuestion extends ComponentBase
         return [
             
         ];
+    }
+
+    public function onSend()
+    {
+        $team = new ModelAskQuestion;
+
+        $team->fill(post());
+        $team->save();
+
+        if ($team) {
+            Flash::success('Форма успешнон отправлена');
+
+            return Redirect::to(Request::url());
+        }
+
+        Flash::error('Ошыбка формы');
     }
 }

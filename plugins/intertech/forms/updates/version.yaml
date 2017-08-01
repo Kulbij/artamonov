@@ -12,3 +12,9 @@
 1.0.5:
      - Create team table
      - create_teams_table.php
+1.0.6:
+     - Create AskQuestions table
+     - create_ask_questions_table.php
+1.0.7:
+     - Update program feedbacks table
+     - update_program_feedback_tabe.php

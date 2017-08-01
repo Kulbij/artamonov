@@ -9,15 +9,23 @@ use Input;
 use Request;
 use Redirect;
 use Validator;
+use Exception;
+use Carbon\Carbon;
+use Cms\Classes\Page;
 use ValidationException;
 use ApplicationException;
-use Cms\Classes\Page;
+use RainLab\User\Models\User;
+use System\Models\MailSetting;
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\Settings as UserSettings;
-use Exception;
+use RainLab\User\Traits\ComponentsTrait;
+use Intertech\Korkki\Models\SocialSettings;
+use Feegleweb\Octoshop\Models\FrontendSettings;
 
 class Account extends ComponentBase
 {
+    use ComponentsTrait;
+
     public function componentDetails()
     {
         return [
@@ -47,6 +55,10 @@ class Account extends ComponentBase
                 'type'        => 'checkbox',
                 'default'     => 0
             ],
+            'partial' => [
+                'label' => 'Partial',
+                'description' => 'Partial file name',
+            ],
         ];
     }
 
@@ -55,10 +67,16 @@ class Account extends ComponentBase
         return [''=>'- none -'] + Page::sortBy('baseFileName')->lists('baseFileName', 'baseFileName');
     }
 
+    
+    public function onRun()
+    {
+        $this->page['user'] = $this->user();
+    }
+
     /**
      * Executed when this component is bound to a page or layout.
      */
-    public function onRun()
+    public function getData()
     {
         /*
          * Redirect to HTTPS checker
@@ -79,6 +97,8 @@ class Account extends ComponentBase
         $this->page['user'] = $this->user();
         $this->page['loginAttribute'] = $this->loginAttribute();
         $this->page['loginAttributeLabel'] = $this->loginAttributeLabel();
+
+        return [];
     }
 
     /**
@@ -121,21 +141,28 @@ class Account extends ComponentBase
              * Validate input
              */
             $data = post();
-            $rules = [];
-
-            $rules['login'] = $this->loginAttribute() == UserSettings::LOGIN_USERNAME
-                ? 'required|between:2,255'
-                : 'required|email|between:6,255';
-
-            $rules['password'] = 'required|between:4,255';
+            $rules = [
+                'email'    => 'required|email|between:6,255',
+                'password' => 'required|between:6,255'
+            ];
 
             if (!array_key_exists('login', $data)) {
                 $data['login'] = post('username', post('email'));
             }
 
-            $validation = Validator::make($data, $rules);
+            $validation = Validator::make($data, $rules, [], $this->attributeNames());
             if ($validation->fails()) {
                 throw new ValidationException($validation);
+            }
+
+            if (post('email')) {
+                $selectUser = User::where('email', post('email'))->first();
+
+                if ($selectUser) {
+                    if (!\Hash::check(post('password'), $selectUser->password)) {
+                        throw new ValidationException(['password' => Lang::get('rainlab.user::lang.login.error.password')]);
+                    }
+                }
             }
 
             /*
@@ -164,6 +191,40 @@ class Account extends ComponentBase
             if (Request::ajax()) throw $ex;
             else Flash::error($ex->getMessage());
         }
+    }
+
+    /**
+     * Translations for attribute name
+     */
+    public function attributeNames()
+    {
+        return [
+            'last_name' => Lang::get('rainlab.user::lang.register.validation.last_name'),
+            'first_name' => Lang::get('rainlab.user::lang.register.validation.first_name'),
+            'patronymic' => Lang::get('rainlab.user::lang.register.validation.patronymic'),
+            'phone1' => Lang::get('rainlab.user::lang.register.validation.phone1'),
+            'email' => Lang::get('rainlab.user::lang.register.validation.email'),
+            'password' => Lang::get('rainlab.user::lang.register.validation.password'),
+            'vatin' => Lang::get('rainlab.user::lang.register.validation.vatin'),
+            'street' => Lang::get('
+                rainlab.user::lang.register.validation.street'),
+            'house' => Lang::get('rainlab.user::lang.register.validation.house'),
+            'flat' => Lang::get('rainlab.user::lang.register.validation.flat'),
+            'phone2' => Lang::get('rainlab.user::lang.register.validation.phone2'),
+            'old_password' => Lang::get('rainlab.user::lang.register.validation.old_password'),
+            'password_confirmation' => Lang::get('rainlab.user::lang.register.validation.password_confirmation'),
+        ];
+    }
+
+    public function userRules()
+    {
+        return [
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'phone' => 'required',
+            'email'    => 'required|email|between:6,255|unique:users',
+            'password' => 'required|between:6,255|confirmed'
+        ];
     }
 
     /**
@@ -227,38 +288,6 @@ class Account extends ComponentBase
         }
     }
 
-    public function userRules()
-    {
-        return [
-            'last_name' => 'required',
-            'first_name' => 'required',
-            'phone' => 'required|min:15',
-            'email'    => 'required|email|between:6,255|unique:users',
-            'password' => 'required|between:6,255|confirmed'
-        ];
-    }
-
-    /**
-     * Translations for attribute name
-     */
-    public function attributeNames()
-    {
-        return [
-            'last_name' => Lang::get('rainlab.user::lang.register.validation.last_name'),
-            'first_name' => Lang::get('rainlab.user::lang.register.validation.first_name'),
-            'phone' => Lang::get('rainlab.user::lang.register.validation.phone1'),
-            'email' => Lang::get('rainlab.user::lang.register.validation.email'),
-            'password' => Lang::get('rainlab.user::lang.register.validation.password'),
-            'vatin' => Lang::get('rainlab.user::lang.register.validation.vatin'),
-            'street' => Lang::get('
-                rainlab.user::lang.register.validation.street'),
-            'house' => Lang::get('rainlab.user::lang.register.validation.house'),
-            'flat' => Lang::get('rainlab.user::lang.register.validation.flat'),
-            'old_password' => Lang::get('rainlab.user::lang.register.validation.old_password'),
-            'password_confirmation' => Lang::get('rainlab.user::lang.register.validation.password_confirmation'),
-        ];
-    }
-
     public function sendMail($user)
     {
         $socials = SocialSettings::instance();
@@ -311,7 +340,7 @@ class Account extends ComponentBase
                 throw new ValidationException(['code' => Lang::get('rainlab.user::lang.account.invalid_activation_code')]);
             }
 
-            Flash::success(Lang::get('rainlab.user::lang.account.success_activation'));
+            Flash::success(Lang::get('rainlab.user::lang.account.success'));
 
             /*
              * Sign in the user
@@ -326,31 +355,66 @@ class Account extends ComponentBase
     }
 
     /**
+     * Rules for update user
+     */
+    public function updateUserRules($user)
+    {
+        return [
+            'last_name' => 'required',
+            'first_name' => 'required',
+            'phone' => 'required',
+            'email'    => 'required|email|between:6,255|unique:users,email,' . $user->id
+        ];
+    }
+
+    /**
      * Update the user
      */
     public function onUpdate()
     {
-        if (!$user = $this->user()) {
-            return;
+        try {
+            if (!$user = $this->user()) {
+                return;
+            }
+
+            $data = post();
+            $rules = $this->updateUserRules($user);
+
+            if (empty(post('old_password'))) {
+                
+            }
+
+            if (post('old_password')) {
+                $rules['old_password'] = 'required|between:6,255';
+                $rules['password'] = 'required|between:6,255|confirmed';
+                $rules['password_confirmation'] = 'required_with:password|between:6,255';
+                if (\Hash::check(post('old_password'), $user->password)) {
+                    $user->password = bcrypt(post('password'));
+                } else {
+                    throw new ValidationException(['old_password' => Lang::get('rainlab.user::lang.update.error.old_password')]);
+                }
+            }
+
+            $validation = Validator::make($data, $rules, [], $this->attributeNames());
+            if ($validation->fails()) {
+                throw new ValidationException($validation);
+            }
+
+            $user->fill($data);
+            $user->save();
+
+            /*
+             * Password has changed, reauthenticate the user
+             */
+            if (strlen(post('password'))) {
+                Auth::login($user->reload(), true);
+            }
+
+            Flash::success(post('flash', Lang::get('rainlab.user::lang.account.success_saved')));
         }
-
-        $user->fill(post());
-        $user->save();
-
-        /*
-         * Password has changed, reauthenticate the user
-         */
-        if (strlen(post('password'))) {
-            Auth::login($user->reload(), true);
-        }
-
-        Flash::success(post('flash', Lang::get('rainlab.user::lang.account.success_saved')));
-
-        /*
-         * Redirect
-         */
-        if ($redirect = $this->makeRedirection()) {
-            return $redirect;
+        catch (Exception $ex) {
+            if (Request::ajax()) throw $ex;
+            else Flash::error($ex->getMessage());
         }
     }
 

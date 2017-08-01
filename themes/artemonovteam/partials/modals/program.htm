@@ -15,7 +15,12 @@
             <a>{{ 'Регистрация'|_ }}</a>
         </div>
         <div class="button-callback">
-            <a>{{ 'Обратная связь'|_ }}</a>
+            <a
+                href=""
+                data-request="productFeedback::onShowForm"
+                data-request-data="id: '{{ program.id }}'"
+                data-request-update="'modals/programbackend' : '.modal.modal-callback'"
+            >{{ 'Обратная связь'|_ }}</a>
         </div>
     </div>
 </div>  
