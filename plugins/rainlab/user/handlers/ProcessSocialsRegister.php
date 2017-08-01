@@ -15,7 +15,7 @@ use System\Models\MailSetting;
 use RainLab\User\Traits\HandlersTrait;
 use Illuminate\Support\Facades\Redirect;
 use RainLab\User\Models\Settings as UserSettings;
-use Intertech\Korkki\Models\SocialSettings;
+use Intertech\Artemonovteam\Models\SocialSettings;
 use Feegleweb\Octoshop\Models\FrontendSettings;
 
 class ProcessSocialsRegister
@@ -76,7 +76,7 @@ class ProcessSocialsRegister
 
 	            $user->forceSave();
 
-	            // $this->sendMailUser($user, $password);
+	            $this->sendMailUser($user, $password);
 	        }
 
 	        if (UserSettings::get('use_throttle', true)) {
