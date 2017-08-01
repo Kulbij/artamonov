@@ -96,13 +96,13 @@ class Plugin extends PluginBase
                 'permissions' => ['intertech.forms.*'],
                 'order'       => 400,
                 'sideMenu' => [
-                    'callbacks' => [
-                        'label'       => 'Обратный звонок',
-                        'url'         => Backend::url('intertech/forms/callbacks'),
-                        'icon'        => 'icon-phone',
-                        'permissions' => ['intertech.forms.*'],
-                        'order'       => 100,
-                    ],
+                    // 'callbacks' => [
+                    //     'label'       => 'Обратный звонок',
+                    //     'url'         => Backend::url('intertech/forms/callbacks'),
+                    //     'icon'        => 'icon-phone',
+                    //     'permissions' => ['intertech.forms.*'],
+                    //     'order'       => 100,
+                    // ],
                     'feedbacks' => [
                         'label'       => 'Обратная связь',
                         'url'         => Backend::url('intertech/forms/feedbacks'),
