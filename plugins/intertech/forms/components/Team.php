@@ -80,7 +80,7 @@ class Team extends ComponentBase
 
     public function sendMail($team)
     {
-        Mail::send('Intertech.forms::mail.admin_callback', [
+        Mail::send('intertech.forms::mail.admin_callback', [
             'team' => $team,
             'date' => Carbon::now()->format('Y-m-d H:i')
         ], function($message) use ($team) {
