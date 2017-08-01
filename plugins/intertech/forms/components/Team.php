@@ -83,7 +83,7 @@ class Team extends ComponentBase
         Mail::send('Intertech.forms::mail.admin_callback', [
             'team' => $team,
             'date' => Carbon::now()->format('Y-m-d H:i')
-        ], function($message) use ($user) {
+        ], function($message) use ($team) {
             $message->to($team->email, $team->first_name . ' ' . $team->last_name)->subject('Хочу в команду');
         });
     }
