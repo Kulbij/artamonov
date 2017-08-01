@@ -21,6 +21,9 @@ columns:
         label: rainlab.user::lang.user.email
         searchable: true
 
+    phone:
+        label: Телефон
+
     created_at:
         label: rainlab.user::lang.user.created_at
         type: timetense

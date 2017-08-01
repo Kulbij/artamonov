@@ -5,20 +5,31 @@
 fields:
 
     first_name:
-        label: rainlab.user::lang.user.name
-        span: auto
+        label: rainlab.user::lang.user.first_name
+        containerAttributes:
+            style: width:33%;clear:none;
 
     last_name:
-        label: rainlab.user::lang.user.surname
-        span: auto
+        label: rainlab.user::lang.user.last_name
+        containerAttributes:
+            style: width:33%;clear:none;margin-left:0.5%;
 
 tabs:
     fields:
 
+        phone:
+            label: rainlab.user::lang.user.phone1
+            tab: rainlab.user::lang.user.account
+            span: left
         email:
             label: rainlab.user::lang.user.email
             tab: rainlab.user::lang.user.account
-            span: full
+            span: right
+
+        patronymic:
+            label: Возраст
+            type: text
+            tab: rainlab.user::lang.user.account
 
         send_invite:
             type: checkbox
@@ -63,24 +74,3 @@ tabs:
             tab: rainlab.user::lang.user.account
             hidden: true
             span: left
-
-        groups:
-            label: rainlab.user::lang.user.groups
-            tab: rainlab.user::lang.user.account
-            type: relation
-            emptyOption: rainlab.user::lang.user.empty_groups
-
-        programs:
-            type: relation
-            
-            tab: Программы
-
-secondaryTabs:
-    fields:
-
-        avatar:
-            label: rainlab.user::lang.user.avatar
-            type: fileupload
-            mode: image
-            imageHeight: 260
-            imageWidth: 260
