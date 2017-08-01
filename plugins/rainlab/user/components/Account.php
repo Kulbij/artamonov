@@ -19,7 +19,7 @@ use System\Models\MailSetting;
 use Cms\Classes\ComponentBase;
 use RainLab\User\Models\Settings as UserSettings;
 use RainLab\User\Traits\ComponentsTrait;
-use Intertech\Korkki\Models\SocialSettings;
+use Intertech\Artemonovteam\Models\SocialSettings;
 use Feegleweb\Octoshop\Models\FrontendSettings;
 
 class Account extends ComponentBase
@@ -290,12 +290,10 @@ class Account extends ComponentBase
 
     public function sendMail($user)
     {
-        $socials = SocialSettings::instance();
 
         if (FrontendSettings::get('mail')->send_customer_confirmation) {
             Mail::send('rainlab.user::mail.register_user_for_admin', [
                 'user' => $user,
-                'socials' => $socials,
                 'date' => Carbon::now()->format('Y-m-d H:i')
             ], function($message) use ($user) {
                 $message->to($user->email, $user->first_name . ' ' . $user->last_name);
@@ -305,7 +303,6 @@ class Account extends ComponentBase
         if (FrontendSettings::get('mail')->send_admin_confirmation) {
             Mail::send('rainlab.user::mail.register_user', [
                 'user' => $user,
-                'socials' => $socials,
                 'date' => Carbon::now()->format('Y-m-d H:i')
             ], function($message) use ($user) {
                 $message->to(MailSetting::get('sender_email'), MailSetting::get('sender_name'));
