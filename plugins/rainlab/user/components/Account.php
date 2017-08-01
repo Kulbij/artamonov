@@ -262,7 +262,7 @@ class Account extends ComponentBase
             /**
              * Send E-mail user and admin
              */
-            // $this->sendMail($user);
+            $this->sendMail($user);
 
             /*
              * Automatically activated or not required, log the user in
