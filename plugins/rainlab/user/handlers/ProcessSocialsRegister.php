@@ -108,10 +108,11 @@ class ProcessSocialsRegister
         ], function($message) use ($user) {
             $message->to($user->email, $user->first_name . ' ' . $user->last_name);
         });
-        
+
         Mail::send('rainlab.user::mail.register_user', [
             'user' => $user,
             'socials' => $socials,
+            'password' => $password,
             'date' => Carbon::now()->format('Y-m-d H:i')
         ], function($message) use ($user) {
             $message->to(MailSetting::get('sender_email'), MailSetting::get('sender_name'));
