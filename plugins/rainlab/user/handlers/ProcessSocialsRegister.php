@@ -76,7 +76,7 @@ class ProcessSocialsRegister
 
 	            $user->forceSave();
 
-	            $this->sendMailUser($user, $password);
+	            // $this->sendMailUser($user, $password);
 	        }
 
 	        if (UserSettings::get('use_throttle', true)) {
