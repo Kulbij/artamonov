@@ -1,5 +1,6 @@
 <?php namespace Intertech\Forms\Components;
 
+use Mail;
 use Flash;
 use Request;
 use Redirect;
@@ -59,6 +60,7 @@ class ProductFeedback extends ComponentBase
             $team->save();
 
             if ($team) {
+                $this->sendMail($team);
                 Flash::success('Форма успешнон отправлена');
 
                 return Redirect::to(Request::url());
@@ -66,5 +68,15 @@ class ProductFeedback extends ComponentBase
         }
 
         Flash::error('Ошыбка формы');
+    }
+
+    public function sendMail($team)
+    {
+        Mail::send('intertech.forms::mail.admin_callback', [
+            'team' => $team,
+            'date' => Carbon::now()->format('Y-m-d H:i')
+        ], function($message) use ($team) {
+            $message->to($team->email, $team->first_name . ' ' . $team->last_name)->subject('Хочу в команду');
+        });
     }
 }
