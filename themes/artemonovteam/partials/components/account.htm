@@ -18,12 +18,14 @@
                             {{ user.last_name }}
                         </div>
                     </li>
+                    {% if user.phone %}
                     <li>
                         <p>{{ 'Телефон'|_ }}:</p>
                         <div class="my-phone">
                             {{ user.phone }}
                         </div>
                     </li>
+                    {% endif %}
                     <li>
                         <p>{{ 'Почта'|_ }}:</p>
                         <div class="my-email">

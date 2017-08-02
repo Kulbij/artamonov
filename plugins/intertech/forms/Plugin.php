@@ -124,7 +124,7 @@ class Plugin extends PluginBase
                         'permissions' => ['intertech.forms.*'],
                         'order'       => 400,
                     ],
-                    'teams' => [
+                    'askquestions' => [
                         'label'       => 'Задать вопрос',
                         'url'         => Backend::url('intertech/forms/askquestions'),
                         'icon'        => 'icon-comment',
