@@ -60,7 +60,7 @@ class ProductFeedback extends ComponentBase
             $team->save();
 
             if ($team) {
-                $this->sendMail($team);
+                $this->sendMail($team, $program);
                 Flash::success('Форма успешнон отправлена');
 
                 return Redirect::to(Request::url());
@@ -70,13 +70,14 @@ class ProductFeedback extends ComponentBase
         Flash::error('Ошыбка формы');
     }
 
-    public function sendMail($team)
+    public function sendMail($team, $program)
     {
         Mail::send('intertech.forms::mail.admin_callback', [
             'team' => $team,
+            'program' => $program,
             'date' => Carbon::now()->format('Y-m-d H:i')
-        ], function($message) use ($team) {
-            $message->to($team->email, $team->first_name . ' ' . $team->last_name)->subject('Хочу в команду');
+        ], function($message) use ($team, $program) {
+            $message->to($team->email, $team->first_name . ' ' . $team->last_name)->subject($program->name);
         });
     }
 }

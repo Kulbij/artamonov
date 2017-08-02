@@ -26,6 +26,7 @@
                     'icon'  => 'fa fa-facebook',
                     'label' => 'Facebook',
                     'image' => 'facebook',
+                    'name' => 'facebook',
                 ],
 
                 // 'google+' => [
