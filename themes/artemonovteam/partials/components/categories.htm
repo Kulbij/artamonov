@@ -2,7 +2,7 @@
     <section class="wrap-category">
         <div class="container">
             <ul class="category-block">
-                {% for category in categories %}
+                {% for category in two_category %}
                     <li>
                         <div class="relativ-hover">
                             <div class="img-holder">
@@ -29,12 +29,39 @@
                         </div>
                     </li>
                 {% endfor %}
+                <li>
+                {% for category in last_category %}
+                    <div class="category-item ">
+                        <div class="relativ-hover">
+                            <div class="img-holder">
+                                <img src="{{ category.image.thumb('auto', 200) }}" alt="img">
+                                <div class="img-opacity" style='background-image: url({{ category.image.thumb('auto', 200)  }})'></div>
+                            </div>
+                            <div class="hover-block">
+                                <h3>
+                                    {{ category.name }}
+                                </h3>
+                                <div class="exerpt">
+                                    <p>{{ category.short_text }}</p>
+                                </div>
+                                <div class="button-cat">
+                                    <a
+                                        href=""
+                                        data-request="onShowModal"
+                                        data-request-data="id: '{{ category.id }}'"
+                                        data-request-update="'modal_category.htm' : '.modal.modal-cat'"
+                                        data-request-flash
+                                    >{{ 'Подробнее'|_ }}</a>
+                                </div>
+                            </div>
+                        </div>
+                        </div>
+                {% endfor %}
+                </li>
             </ul>
         </div>
 
-        <div class="modal modal-cat">
-            
-        </div>
+        <div class="modal modal-cat"></div>
 
     </section>
 {% endif %}

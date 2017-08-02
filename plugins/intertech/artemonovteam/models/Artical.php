@@ -45,6 +45,10 @@ class Artical extends Model
      */
     protected $guarded = ['*'];
 
+    protected $dates = [
+        'event'
+    ];
+
     /**
      * @var array Fillable fields
      */

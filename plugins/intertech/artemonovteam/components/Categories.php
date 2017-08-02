@@ -29,9 +29,13 @@ class Categories extends ComponentBase
     public function getData()
     {
         $categories = Category::where('is_enabled', true)->orderBy('sort_order', 'asc')->get();
+        $twoCategory = Category::where('is_enabled', true)->orderBy('sort_order', 'asc')->skip(0)->take(2)->get();
+        $lastCategory = Category::where('is_enabled', true)->orderBy('sort_order', 'asc')->skip(2)->take(4)->get();
 
         return [
-            'categories' => $categories
+            'categories' => $categories,
+            'two_category' => $twoCategory,
+            'last_category' => $lastCategory
         ];
     }
 

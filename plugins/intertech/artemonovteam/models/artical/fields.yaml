@@ -49,6 +49,12 @@ fields:
         placeholder: Введите краткий текст
         comment: Краткий текст будет отображатся в списке постов
 
+    event:
+        label: Собитие
+        type: datepicker
+        mode: date
+        span: left
+
     description:
         label: Описание
         type: richeditor

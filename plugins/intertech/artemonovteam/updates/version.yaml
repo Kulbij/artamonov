@@ -29,3 +29,6 @@
 1.0.11:
     - Update trainers table
     - update_trainers_table.php
+1.0.12:
+    - Update artical table
+    - update_artical_table.php
