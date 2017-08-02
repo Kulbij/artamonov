@@ -22,17 +22,6 @@ class ProcessSocialsRegister
 {
     use HandlersTrait;
 
-    public $client_id;
-    public $client_secret;
-    public $redirect;
-
-    public function __construct()
-    {
-    	$this->client_id = config('services.vkontakte.client_id');
-	    $this->client_secret = config('services.vkontakte.client_secret');
-	    $this->redirect = config('services.vkontakte.redirect');
-    }
-
     /**
      * Auth for Facebook
      */
