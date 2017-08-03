@@ -11,27 +11,31 @@
             <p>{{ formprogram.name }}</p>
             <ul class="contacts-form">
                 <li>
-                    <input type="text" id="name" name="first_name" placeholder="{{ 'Имя'|_ }}">
+                    <input type="text" id="name" name="first_name" placeholder="{{ 'Имя'|_ }}" data-validate="name">
                     <div class="error-text" data-validate-for="first_name"></div>
                 </li>
                 <li>
-                    <input type="text" id="last-name" name="last_name" placeholder="{{ 'Фамилия'|_ }}">
+                    <input type="text" id="last-name" name="last_name" placeholder="{{ 'Фамилия'|_ }}" data-validate="name">
                     <div class="error-text" data-validate-for="last_name"></div>
                 </li>
                 <li>
-                    <input type="text" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}">
+                    <input type="text" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}" data-validate="phone">
                     <div class="error-text" data-validate-for="phone"></div>
                 </li>
                 <li>
-                    <input type="text" id="meil" name="email" placeholder="{{ 'Почта'|_ }}">
+                    <input type="text" id="meil" name="email" placeholder="{{ 'Почта'|_ }}" data-validate="email">
                     <div class="error-text" data-validate-for="email"></div>
                 </li>
                 <li class="question">
-                    <textarea name="message" id="question" placeholder="{{ 'Занимались ли ранее каким-то спортом? Каким?'|_ }}"></textarea>
+                    <textarea name="message" id="question" placeholder="{{ 'Занимались ли ранее каким-то спортом? Каким?'|_ }}" data-validate="default"></textarea>
                     <div class="error-text" data-validate-for="message"></div>
                 </li>
             </ul>
         </fieldset>
-        <input type="submit" value="Отправить" class="butt">
+        <div class="submit" id="foot-button">{{ 'Отправить'|_ }}</div>
     </form>
 </div>
+
+<script>
+    $("form").validate();
+</script>

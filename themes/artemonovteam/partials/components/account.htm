@@ -50,32 +50,35 @@
                     <ul class="contacts-form">
                         <li>
                             <input type="text" id="name" name="first_name" value="{{ user.first_name
-                             }}" placeholder="{{ 'Имя'|_ }}" required>
+                             }}" placeholder="{{ 'Имя'|_ }}" data-validate="name">
                             <div class="error-text" data-validate-for="first_name"></div>
                         </li>
                         <li>
                             <input type="text" id="last-name" name="last_name" value="{{ user.last_name
-                             }}" placeholder="{{ 'Фамилия'|_ }}" required>
+                             }}" placeholder="{{ 'Фамилия'|_ }}" data-validate="name">
                             <div class="error-text" data-validate-for="last_name"></div>
                         </li>
                         <li>
-                            <input type="text" id="phone" name="phone" value="{{ user.phone }}" placeholder="{{ 'Телефон'|_ }}" required>
+                            <input type="text" id="phone" name="phone" value="{{ user.phone }}" placeholder="{{ 'Телефон'|_ }}" data-validate="phone">
                             <div class="error-text" data-validate-for="phone"></div>
                         </li>
                         <li>
-                            <input type="text" id="meil" name="email" value="{{ user.email }}" placeholder="{{ 'Почта'|_ }}">
+                            <input type="text" id="meil" name="email" value="{{ user.email }}" placeholder="{{ 'Почта'|_ }}" data-validate="email">
                             <div class="error-text" data-validate-for="email"></div>
                         </li>
+                    </ul>
+                    <p>{{ 'Изменить пароль'|_ }}</p>
+                    <ul class="pass-form">
                         <li>
-                            <input type="password" name="old_password" placeholder="{{ 'Старый пароль'|_ }}">
+                            <input type="password" name="old_password" placeholder="{{ 'Старый пароль'|_ }}"  data-validate="password-default" data-required="password">
                             <div class="error-text" data-validate-for="old_password"></div>
                         </li>
                         <li>
-                            <input type="password" id="password" name="password" value="" placeholder="{{ 'Новый пароль'|_ }}">
+                            <input type="password" id="password" name="password" value="" placeholder="{{ 'Новый пароль'|_ }}" data-validate="password-default" data-required="old_password">
                             <div class="error-text" data-validate-for="password"></div>
                         </li>
                         <li>
-                            <input type="password" id="password_confirmation" name="password_confirmation" value="" placeholder="{{ 'Подтвирждение нового'|_ }}">
+                            <input type="password" id="password_confirmation" name="password_confirmation" value="" placeholder="{{ 'Подтверждение пароля'|_ }}" data-validate="password-default" data-confirm="password">
                             <div class="error-text" data-validate-for="password_confirmation"></div>
                         </li>
                     </ul>

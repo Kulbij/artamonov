@@ -7,12 +7,20 @@
         data-request-flash
         data-request-validate
     >
-        <input type="text" id="name" name="full_name" placeholder="{{ 'Имя'|_ }}">
-        <div class="error-text" data-validate-for="full_name"></div>
-        <input type="text" id="email" name="email" placeholder="{{ 'Почта'|_ }}">
-        <div class="error-text" data-validate-for="email"></div>
-        <textarea name="massage" id="#message" placeholder="{{ 'Сообщение'|_ }}"></textarea>
-        <div class="error-text" data-validate-for="massage"></div>
-        <input type="submit" value="{{ 'Отправить'|_ }}" id="foot-button">
+        <ul>
+            <li>
+                <input type="text" id="name" name="full_name" placeholder="{{ 'Имя'|_ }}" data-validate="name">
+                <div class="error-text" data-validate-for="full_name"></div>
+            </li>
+            <li>
+                <input type="text" id="email" name="email" placeholder="{{ 'Почта'|_ }}" data-validate="email">
+                <div class="error-text" data-validate-for="email"></div>
+            </li>
+            <li>
+                <textarea name="massage" id="#message" placeholder="{{ 'Сообщение'|_ }}" data-validate="default"></textarea>
+                <div class="error-text" data-validate-for="massage"></div>
+            </li>
+        </ul>
+        <div class="submit" id="foot-button">{{ 'Отправить'|_ }}</div>
     </form>
 </div>

@@ -9,19 +9,19 @@
             <legend>{{ 'Написать нам'|_ }}</legend>
             <ul>
                 <li>
-                    <input type="text" id="#name" placeholder="{{ 'Имя'|_ }}" name="full_name" size="24">
+                    <input type="text" id="#name" placeholder="{{ 'Имя'|_ }}" name="full_name" size="24" data-validate="name">
                     <div class="error-text" data-validate-for="full_name"></div>
                 </li>
                 <li>
-                    <input type="text" id="meil" placeholder="{{ 'Почта'|_ }}" name="email" size="24">
+                    <input type="text" id="meil" placeholder="{{ 'Почта'|_ }}" name="email" size="24" data-validate="email">
                     <div class="error-text" data-validate-for="email"></div>
                 </li>
                 <li>
-                    <textarea name="message" id="#message" cols="61" rows="6" placeholder="{{ 'Сообщение'|_ }}"></textarea>
+                    <textarea name="message" id="#message" cols="61" rows="6" placeholder="{{ 'Сообщение'|_ }}" data-validate="default"></textarea>
                     <div class="error-text" data-validate-for="message"></div>
                 </li>
             </ul>
         </fieldset>
-        <input type="submit" value="{{ 'Отправить'|_ }}">
+        <div class="submit">{{ 'Отправить'|_ }}</div>
     </form>
 {% endif %}

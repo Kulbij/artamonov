@@ -147,32 +147,34 @@ partial = "account.htm"
                     </ul>
                     <ul class="contacts-form">
                         <li>
-                            <input type="text" id="name" name="first_name" placeholder="{{ 'Имя'|_ }}" required>
+                            <input type="text" id="name" name="first_name" placeholder="{{ 'Имя'|_ }}" data-validate="name">
                             <div class="error-text" data-validate-for="first_name"></div>
                         </li>
                         <li>
-                            <input type="text" id="last-name" name="last_name" placeholder="{{ 'Фамилия'|_  }}" required>
+                            <input type="text" id="last-name" name="last_name" placeholder="{{ 'Фамилия'|_  }}" data-validate="name">
                             <div class="error-text" data-validate-for="last_name"></div>
                         </li>
                         <li>
-                            <input type="text" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}" required>
+                            <input type="text" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}" data-validate="phone">
                             <div class="error-text" data-validate-for="phone"></div>
                         </li>
                         <li>
-                            <input type="text" id="email" name="email" placeholder="{{ 'Почта'|_  }}" required>
+                            <input type="text" id="email" name="email" placeholder="{{ 'Почта'|_  }}" data-validate="email">
                             <div class="error-text" data-validate-for="email"></div>
                         </li>
                         <li>
-                            <input type="password" id="password" name="password" placeholder="{{ 'Пароль'|_  }}" required>
+                            <input type="password" id="password" name="password" placeholder="{{ 'Пароль'|_  }}" data-validate="password-default">
                             <div class="error-text" data-validate-for="password"></div>
                         </li>
                         <li>
-                            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="{{ 'Подтвирждение пароля'|_  }}" required>
+                            <input type="password" id="password_confirmation" name="password_confirmation" placeholder="{{ 'Подтвирждение пароля'|_  }}" data-validate="password-default" data-confirm="password">
                             <div class="error-text" data-validate-for="password_confirmation"></div>
                         </li>
                     </ul>
                 </fieldset>
-                <input type="submit" value="{{ 'Отправить'|_ }}" class="butt">
+                <div class="submit" id="foot-button">
+                    {{ 'Отправить'|_ }}
+                </div>
             </form>
         </div>
     </div>
@@ -191,7 +193,7 @@ partial = "account.htm"
 	        src="https://code.jquery.com/jquery-2.2.4.min.js"
 	        integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="
 	        crossorigin="anonymous"></script>
-	<script src="{{ 'assets/js/app.js'|theme }}"></script>
+	<script src="{{ 'assets/js/validate.js'|theme }}"></script>
 	<script src="{{ 'assets/js/main.js'|theme }}"></script>
     <script>
         $('.button-change-contact').on('click', function() {
