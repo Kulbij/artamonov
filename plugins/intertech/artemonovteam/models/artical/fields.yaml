@@ -47,7 +47,7 @@ fields:
         size: middle
         span: right
         placeholder: Введите краткий текст
-        comment: Краткий текст будет отображатся в списке постов
+        comment: Краткий текст будет отображаться в списке постов
 
     event:
         label: Собитие

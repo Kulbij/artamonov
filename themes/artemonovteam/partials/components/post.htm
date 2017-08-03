@@ -16,15 +16,20 @@
                 </article>
             </div>
             <div class="social">
-                <div class="share">
+                {#<div class="share">
                     {{ 'Поделиться:'|_ }}
-                </div>
-                <ul>
+                </div>#}
+                <div class="social-share share">
+                {{ 'Поделиться'|_ }}:
+                    
+                  </div>
+                  <div data-services="facebook" class="ya-share2"></div>
+                {#<ul>
                     <li class="facebook">
                         
                         <a href="#" class="fa fa-facebook" aria-hidden="true"></a>
                     </li>
-                </ul>
+                </ul>#}
             </div>
             {% if post.tags|length > 0 %}
                 <div class="tag-block">
