@@ -50,7 +50,7 @@ fields:
         comment: Краткий текст будет отображаться в списке постов
 
     event:
-        label: Собитие
+        label: Событие
         type: datepicker
         mode: date
         span: left
