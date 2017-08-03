@@ -97,9 +97,9 @@ partial = "account.htm"
                     </li>
                     <li>
                         <input type="password" id="pass" name="password" placeholder="{{ 'Пароль'|_ }}">
-                        <div class="error-text" data-validate-for="password"></div>
+                        <div class="error-text" data-validate="password"></div>
                     </li>
-                    <input type="submit" value="{{ 'Войти'|_ }}" class="in-ok">
+                    <div class="submit" id="foot-button">{{ 'Войти'|_ }}</div>
                 </ul>
             </form>
             <div class="button-reg">
