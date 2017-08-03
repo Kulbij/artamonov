@@ -21,7 +21,7 @@
                                     <a href="{{ 'post'|page({ slug: post.slug }) }}">{{ 'Подробнее'|_ }}</a>
                                 </div>
                                 <div class="date-news">
-                                    {{ post.created_at|date('d') }} <span>{{ post.created_at|date('M') }}</span>
+                                    {{ post.event|date('d') }} <span>{{ post.event|date('M') }}</span>
                                 </div>
                             </li>
                         {% endfor %}
