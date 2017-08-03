@@ -93,9 +93,11 @@ partial = "account.htm"
                 <ul>
                     <li>
                         <input type="text" id="meil" name="email" value="" placeholder="{{ 'Почта'|_ }}" data-validate="email">
+                        <div class="error-text" data-validate-for="email"></div>
                     </li>
                     <li>
                         <input type="password" id="pass" name="password" placeholder="{{ 'Пароль'|_ }}" data-validate="password">
+                        <div class="error-text" data-validate-for="password"></div>
                     </li>
                     <div class="submit" id="foot-button">{{ 'Войти'|_ }}</div>
                 </ul>
