@@ -6,6 +6,6 @@
         {{ 'Восстановление пароля'|_ }}
     </h2>
     <input name="code" type="text" id="code" placeholder="{{ 'Введите код'|_ }}" size="34" value="{{ __SELF__.code }}">
-    <input type="password" name="password" id="pass-new" placeholder="{{ 'Введите новый пароль'|_ }}" size="34">
-    <input type="submit" value="{{ 'Изменить'|_ }}" class="butt" id="button-change-contact">
+    <input type="password" name="password" id="pass-new" placeholder="{{ 'Введите новый пароль'|_ }}" size="34" data-validate="password">
+    <div class="submit" id="button-change-contact">{{ 'Изменить'|_ ]}</div>
 </form>

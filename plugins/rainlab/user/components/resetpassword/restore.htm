@@ -1,5 +1,3 @@
-
-
 <form
     data-request="{{ __SELF__ }}::onRestorePassword"
     data-request-update="'{{ __SELF__ }}::reset': '#partialUserResetForm'"
@@ -7,6 +5,6 @@
 	<h2>
 	    {{ 'Восстановление пароля'|_ }}
 	</h2>
-	<input type="text" id="emeil" name="email" placeholder="{{ 'Введите e-mail'|_ }}" size="34">
-	<input type="submit" value="Отправить" class="butt" id="button-change-contact">
+	<input type="text" id="emeil" name="email" placeholder="{{ 'Введите e-mail'|_ }}" size="34" data-validate="email">
+	<div class="submit" id="button-change-contact">{{ 'Отправить'|_ }}</div>
 </form>
