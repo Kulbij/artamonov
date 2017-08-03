@@ -14,7 +14,9 @@
 
                     {{ post.description|raw }}
 
-                    <iframe width="560" height="315" src="{{ post.video }}" frameborder="0" allowfullscreen></iframe>
+                    <div class="videoWrapper">
+                        <iframe width="560" height="315" src="{{ post.video }}" frameborder="0" allowfullscreen></iframe>
+                    </div>
                 </article>
             </div>
             <div class="social">
