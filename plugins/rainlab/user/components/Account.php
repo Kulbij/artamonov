@@ -153,7 +153,7 @@ class Account extends ComponentBase
             if ($validation->fails()) {
                 throw new ValidationException($validation);
             }
-
+            
             if (post('email')) {
                 $selectUser = User::where('email', post('email'))->first();
 
