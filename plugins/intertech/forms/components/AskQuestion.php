@@ -44,11 +44,11 @@ class AskQuestion extends ComponentBase
         $team->save();
 
         if ($team) {
-            Flash::success('Форма успешнон отправлена');
+            Flash::success('Форма успешно отправлена');
 
             return Redirect::to(Request::url());
         }
 
-        Flash::error('Ошыбка формы');
+        Flash::error('Ошибка формы');
     }
 }

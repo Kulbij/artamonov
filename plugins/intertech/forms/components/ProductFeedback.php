@@ -62,13 +62,13 @@ class ProductFeedback extends ComponentBase
 
             if ($team) {
                 $this->sendMail($team, $program);
-                Flash::success('Форма успешнон отправлена');
+                Flash::success('Форма успешно отправлена');
 
                 return Redirect::to(Request::url());
             }
         }
 
-        Flash::error('Ошыбка формы');
+        Flash::error('Ошибка формы');
     }
 
     public function sendMail($team, $program)
