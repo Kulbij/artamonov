@@ -1,10 +1,16 @@
+<h2>
+    {{ 'Восстановление пароля'|_ }}
+</h2>
+
 <form
     data-request="{{ __SELF__ }}::onRestorePassword"
     data-request-update="'{{ __SELF__ }}::reset': '#partialUserResetForm'"
-    data-request-flash>
-	<h2>
-	    {{ 'Восстановление пароля'|_ }}
-	</h2>
-	<input type="text" id="emeil" name="email" placeholder="{{ 'Введите e-mail'|_ }}" size="34" data-validate="email">
+    data-request-flash
+>
+<ul>
+	<li>
+		<input type="text" id="emeil" name="email" placeholder="{{ 'Введите e-mail'|_ }}" size="34" data-validate="email">
+	</li>
 	<div class="submit" id="button-change-contact">{{ 'Отправить'|_ }}</div>
+</ul>
 </form>

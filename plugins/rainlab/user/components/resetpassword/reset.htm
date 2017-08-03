@@ -1,11 +1,16 @@
+<h2>
+    {{ 'Восстановление пароля'|_ }}
+</h2>
 <form
     data-request="{{ __SELF__ }}::onResetPassword"
     data-request-update="'{{ __SELF__ }}::complete': '#partialUserResetForm'">
-    <div class="form-group">
-    <h2>
-        {{ 'Восстановление пароля'|_ }}
-    </h2>
-    <input name="code" type="text" id="code" placeholder="{{ 'Введите код'|_ }}" size="34" value="{{ __SELF__.code }}">
-    <input type="password" name="password" id="pass-new" placeholder="{{ 'Введите новый пароль'|_ }}" size="34" data-validate="password">
+    <div class="form-group"
+>
+<ul>
+	<li>
+    	<input name="code" type="text" id="code" placeholder="{{ 'Введите код'|_ }}" size="34" value="{{ __SELF__.code }}">
+    	<input type="password" name="password" id="pass-new" placeholder="{{ 'Введите новый пароль'|_ }}" size="34" data-validate="password">
+	</li>
     <div class="submit" id="button-change-contact">{{ 'Изменить'|_ ]}</div>
+    </ul>
 </form>
