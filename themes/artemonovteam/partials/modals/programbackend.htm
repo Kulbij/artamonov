@@ -19,7 +19,7 @@
                     <div class="error-text" data-validate-for="last_name"></div>
                 </li>
                 <li>
-                    <input type="text" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}" data-validate="phone">
+                    <input type="text" class="phone-mask" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}" data-inputmask="'alias': 'phone'" data-validate="phone">
                     <div class="error-text" data-validate-for="phone"></div>
                 </li>
                 <li>
@@ -38,4 +38,5 @@
 
 <script>
     $("form").validate();
+    $("input.phone-mask").mask("+3(999)999-9999");
 </script>
