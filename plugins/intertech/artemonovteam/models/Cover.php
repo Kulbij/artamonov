@@ -1,5 +1,6 @@
 <?php namespace Intertech\Artemonovteam\Models;
 
+use Flash;
 use Model;
 use October\Rain\Database\Traits\Sortable;
 use October\Rain\Database\Traits\Validation;
@@ -65,5 +66,10 @@ class Cover extends Model
                 'is_main' => false
             ]);
         }
+    }
+    
+    public function beforeSave()
+    {
+        Flash::success('Обложка была успешно сохранена');
     }
 }

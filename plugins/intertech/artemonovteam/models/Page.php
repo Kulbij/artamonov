@@ -1,5 +1,6 @@
 <?php namespace Intertech\Artemonovteam\Models;
 
+use Flash;
 use Model;
 use October\Rain\Database\Traits\Sortable;
 use Intertech\Artemonovteam\Traits\PageTrait;
@@ -63,4 +64,9 @@ class Page extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+
+    public function beforeSave()
+    {
+        Flash::success('Страница была успешно сохранена');
+    }
 }

@@ -1,5 +1,6 @@
 <?php namespace Intertech\Artemonovteam\Models;
 
+use Flash;
 use Model;
 use October\Rain\Database\Traits\Sortable;
 use Intertech\Artemonovteam\Traits\PageTrait;
@@ -64,4 +65,9 @@ class Program extends Model
     public $attachOne = [
         'image' => 'System\Models\File',
     ];
+
+    public function beforeSave()
+    {
+        Flash::success('Программа была успешно сохранена');
+    }
 }

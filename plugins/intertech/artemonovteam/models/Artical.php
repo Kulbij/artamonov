@@ -1,5 +1,6 @@
 <?php namespace Intertech\Artemonovteam\Models;
 
+use Flash;
 use Model;
 use October\Rain\Database\Traits\Validation;
 
@@ -81,5 +82,10 @@ class Artical extends Model
         return $query->whereHas('tags', function ($query) use ($tags) {
             $query->whereIn('intertech_artemonovteam_tags.id', $tags);
         });
+    }
+
+    public function beforeSave()
+    {
+        Flash::success('Пост был успешно сохранен');
     }
 }

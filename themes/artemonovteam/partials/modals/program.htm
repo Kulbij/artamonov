@@ -7,7 +7,7 @@
             <div class="img-opacity" style='background-image: url("{{ program.image.path }}")'></div>
         </div>
         <p>
-            {{ program.description|raw }}
+            {{ program.description|raw|trim|striptags }}
         </p>
     </article>
     <div class="but">
