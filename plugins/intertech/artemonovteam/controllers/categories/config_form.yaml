@@ -22,7 +22,7 @@ create:
 
 # Update page
 update:
-    title: Редаветирование категории
+    title: Редактирование категории
     redirect: intertech/artemonovteam/categories
     redirectClose: intertech/artemonovteam/categories
 
