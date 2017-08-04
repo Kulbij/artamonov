@@ -11,6 +11,10 @@
     	<input name="code" type="text" id="code" placeholder="{{ 'Введите код'|_ }}" size="34" value="{{ __SELF__.code }}">
     	<input type="password" name="password" id="pass-new" placeholder="{{ 'Введите новый пароль'|_ }}" size="34" data-validate="password">
 	</li>
-    <div class="submit" id="button-change-contact">{{ 'Изменить'|_ ]}</div>
+    <div class="submit" id="button-change-contact">{{ 'Изменить'|_ }}</div>
     </ul>
 </form>
+
+<script>
+    $("form").validate();
+</script>
