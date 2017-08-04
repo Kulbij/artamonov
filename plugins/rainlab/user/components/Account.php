@@ -400,7 +400,7 @@ class Account extends ComponentBase
 
             Flash::success(post('flash', Lang::get('rainlab.user::lang.account.success_saved')));
 
-            return Redirect::to(Request::get());
+            return Redirect::to(Request::url());
         }
         catch (Exception $ex) {
             if (Request::ajax()) throw $ex;
