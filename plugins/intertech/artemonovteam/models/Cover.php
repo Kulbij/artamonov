@@ -66,10 +66,7 @@ class Cover extends Model
                 'is_main' => false
             ]);
         }
-    }
-    
-    public function beforeSave()
-    {
+
         Flash::success('Обложка была успешно сохранена');
     }
 }
