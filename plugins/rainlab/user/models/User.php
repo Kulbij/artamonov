@@ -36,8 +36,10 @@ class User extends UserBase
         'groups' => ['RainLab\User\Models\UserGroup',
             'table' => 'users_groups'
         ],
-        'programs' => ['Intertech\Artemonovteam\Models\Program',
-            'table' => 'intertech_artemonovteam_program_user'
+        'programsUser' => ['Intertech\Artemonovteam\Models\Program',
+            'table' => 'intertech_artemonovteam_program_user',
+            'key' => 'user_id',
+            'otherKey' => 'program_id'
         ],
     ];
 

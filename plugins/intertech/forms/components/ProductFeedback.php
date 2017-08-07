@@ -1,5 +1,6 @@
 <?php namespace Intertech\Forms\Components;
 
+use Auth;
 use Mail;
 use Flash;
 use Request;
@@ -61,6 +62,12 @@ class ProductFeedback extends ComponentBase
             $team->save();
 
             if ($team) {
+                $user = Auth::getUser();
+                if ($user) {
+                    $user->programsUser()
+                        ->attach($program->id);
+                }
+
                 $this->sendMail($team, $program);
                 Flash::success('Форма успешно отправлена');
 

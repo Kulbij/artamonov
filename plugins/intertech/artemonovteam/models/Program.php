@@ -66,6 +66,14 @@ class Program extends Model
         'image' => 'System\Models\File',
     ];
 
+    public $belongsToMany = [
+        'user' => ['RainLab\User\Models\User',
+            'table' => 'intertech_artemonovteam_program_user',
+            'key' => 'program_id',
+            'otherKey' => 'user_id'
+        ],
+    ];
+
     public function beforeSave()
     {
         Flash::success('Программа была успешно сохранена');

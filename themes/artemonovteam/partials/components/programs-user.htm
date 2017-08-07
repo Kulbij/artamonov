@@ -1,0 +1,19 @@
+{% if user.programsUser|length > 0 %}
+<li>
+{% for program in programs %}
+    <p>{{ 'Мои программы'|_ }}:</p>
+    <ul class="my-programs">
+        {% for program in user.programsUser %}
+        <li class="button-prog">
+            <a
+                href=""
+                data-request="onShowProgram"
+                data-request-data="id: '{{ program.id }}'"
+                data-request-update="'modals/program' : 'div.modal.modal-prog'"
+            >{{ program.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% endfor %}
+</li>
+{% endif %}

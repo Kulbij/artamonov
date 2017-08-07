@@ -74,3 +74,8 @@ tabs:
             tab: rainlab.user::lang.user.account
             hidden: true
             span: left
+
+        programsUser:
+            type: partial
+            path: field_programs_user
+            tab: Программы

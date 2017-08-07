@@ -32,11 +32,16 @@
                             {{ user.email }}
                         </div>
                     </li>
+                    {% component 'programsUser' %}
                 </ul>
                 <div class="button-change-contact">{{ 'Изменить'|_ }}</div>
             </div>
         </div>
     </section>
+
+    <div class="modal modal-prog"></div>
+    <div class="modal modal-callback"></div>
+
     <div class="modal modal-change-contact">
         <div class="modal-form-change-contact">
             <div class="close"></div>

@@ -1,0 +1,18 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+programs_user:
+    label: Избранное каталога
+    view:
+        list: $/intertech/artemonovteam/models/program/columns.yaml
+        recordUrl: intertech/artemonovteam/programs/preview/:id
+        toolbarButtons: add|remove
+        defaultSort:
+            column: created_at
+            direction: desc
+    manage:
+        showSearch: true
+        recordsPerPage: 10
+        list: $/intertech/artemonovteam/models/program/columns.yaml
+        form: $/intertech/artemonovteam/models/program/relative_fields.yaml

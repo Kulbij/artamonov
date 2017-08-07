@@ -1,5 +1,6 @@
 <?php namespace Intertech\Artemonovteam\Components;
 
+use Auth;
 use Cms\Classes\ComponentBase;
 use Intertech\Artemonovteam\Models\Program;
 use Intertech\Artemonovteam\Models\Category;
@@ -79,5 +80,7 @@ class Programs extends ComponentBase
         if ($program) {
             $this->page['program'] = $program;
         }
+
+        $this->page['user'] = Auth::getUser();
     }
 }

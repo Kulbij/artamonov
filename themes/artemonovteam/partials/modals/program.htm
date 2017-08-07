@@ -11,9 +11,11 @@
         </p>
     </article>
     <div class="but">
+        {% if not user %}
         <div class="button-reg">
             <a>{{ 'Регистрация'|_ }}</a>
         </div>
+        {% endif %}
         <div class="button-callback">
             <a
                 href=""
