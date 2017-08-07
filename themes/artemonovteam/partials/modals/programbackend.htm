@@ -11,19 +11,19 @@
             <p>{{ formprogram.name }}</p>
             <ul class="contacts-form">
                 <li>
-                    <input type="text" id="name" name="first_name" placeholder="{{ 'Имя'|_ }}" data-validate="name">
+                    <input type="text" id="name" name="first_name" placeholder="{{ 'Имя'|_ }}" data-validate="name" value="{{ user.first_name }}">
                     <div class="error-text" data-validate-for="first_name"></div>
                 </li>
                 <li>
-                    <input type="text" id="last-name" name="last_name" placeholder="{{ 'Фамилия'|_ }}" data-validate="name">
+                    <input type="text" id="last-name" name="last_name" placeholder="{{ 'Фамилия'|_ }}" data-validate="name" value="{{ user.last_name }}">
                     <div class="error-text" data-validate-for="last_name"></div>
                 </li>
                 <li>
-                    <input type="text" class="phone-mask" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}" data-inputmask="'alias': 'phone'" data-validate="phone">
+                    <input type="text" class="phone-mask" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}" data-inputmask="'alias': 'phone'" data-validate="phone" value="{{ user.phone }}">
                     <div class="error-text" data-validate-for="phone"></div>
                 </li>
                 <li>
-                    <input type="text" id="meil" name="email" placeholder="{{ 'Почта'|_ }}" data-validate="email">
+                    <input type="text" id="meil" name="email" placeholder="{{ 'Почта'|_ }}" data-validate="email" value="{{ user.email }}">
                     <div class="error-text" data-validate-for="email"></div>
                 </li>
                 <li class="question">

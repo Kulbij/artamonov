@@ -47,6 +47,8 @@ class ProductFeedback extends ComponentBase
         if ($program) {
             $this->page['formprogram'] = $program;
         }
+
+        $this->page['user'] = Auth::getUser();
     }
 
     public function onSend()
@@ -65,7 +67,7 @@ class ProductFeedback extends ComponentBase
                 $user = Auth::getUser();
                 if ($user) {
                     $user->programsUser()
-                        ->attach($program->id);
+                        ->sync([$program->id]);
                 }
 
                 $this->sendMail($team, $program);
