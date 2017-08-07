@@ -18,3 +18,6 @@
 1.0.7:
      - Update program feedbacks table
      - update_program_feedback_tabe.php
+1.0.8:
+     - Update quation table
+     - update_quation_table.php

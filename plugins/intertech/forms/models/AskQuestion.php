@@ -18,13 +18,15 @@ class AskQuestion extends Model
     public $timestamps = true;
 
     public $rules = [
-        'full_name' => 'required',
+        'first_name' => 'required',
+        'last_name' => 'required',
         'email' => 'required|email',
         'massage' => 'required'
     ];
 
     public $attributeNames = [
-        'full_name' => 'Полное имя',
+        'first_name' => 'Имя',
+        'last_name' => 'Фамилия',
         'email' => 'Email',
         'massage' => 'Сообщение'
     ];
@@ -38,7 +40,8 @@ class AskQuestion extends Model
      * @var array Fillable fields
      */
     protected $fillable = [
-        'full_name',
+        'first_name',
+        'last_name',
         'email',
         'massage'
     ];

@@ -9,8 +9,16 @@
     >
         <ul>
             <li>
-                <input type="text" id="name" name="full_name" placeholder="{{ 'Имя'|_ }}" data-validate="name">
-                <div class="error-text" data-validate-for="full_name"></div>
+                <input type="text" id="name" name="first_name" placeholder="{{ 'Имя'|_ }}" data-validate="name">
+                <div class="error-text" data-validate-for="first_name"></div>
+            </li>
+            <li>
+                <input type="text" id="last-name" name="last_name" placeholder="{{ 'Фамилия'|_ }}" data-validate="name">
+                <div class="error-text" data-validate-for="last_name"></div>
+            </li>
+            <li>
+                <input type="text" class="phone-mask" id="phone" name="phone" placeholder="{{ 'Телефон'|_ }}" data-inputmask="'alias': 'phone'" data-validate="phone" >
+                <div class="error-text" data-validate-for="phone"></div>
             </li>
             <li>
                 <input type="text" id="email" name="email" placeholder="{{ 'Почта'|_ }}" data-validate="email">
