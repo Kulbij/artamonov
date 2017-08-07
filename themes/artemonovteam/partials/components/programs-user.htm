@@ -1,6 +1,5 @@
 {% if user.programsUser|length > 0 %}
 <li>
-{% for program in programs %}
     <p>{{ 'Мои программы'|_ }}:</p>
     <ul class="my-programs">
         {% for program in user.programsUser %}
@@ -14,6 +13,5 @@
         </li>
         {% endfor %}
     </ul>
-{% endfor %}
 </li>
 {% endif %}
