@@ -66,8 +66,11 @@ class ProductFeedback extends ComponentBase
             if ($team) {
                 $user = Auth::getUser();
                 if ($user) {
-                    $user->programsUser()
-                        ->sync([$program->id]);
+                    $userProgram = $user->programsUser()->where('program_id', $program->id)->first();
+                    if (!$userProgram) {
+                        $user->programsUser()
+                            ->attach([$program->id]);
+                    }
                 }
 
                 $this->sendMail($team, $program);
