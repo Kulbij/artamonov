@@ -3,12 +3,23 @@
 # ===================================
 
 fields:
-    full_name:
+    first_name:
         label: Имя
         type: text
         span: left
+
+    last_name:
+        label: Фамилия
+        type: text
+        span: right
+
     email:
         label: E-mail
+        type: text
+        span: left
+
+    phone:
+        label: Телефон
         type: text
         span: right
 

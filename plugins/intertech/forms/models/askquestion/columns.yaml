@@ -8,8 +8,16 @@ columns:
         searchable: true
         invisible: true
 
-    full_name:
-        label: Полное имя
+    first_name:
+        label: Имя
+        searchable: true
+
+    last_name:
+        label: Фамилия
+        searchable: true
+
+    phone:
+        label: Телефон
         searchable: true
 
     email:

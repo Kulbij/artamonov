@@ -21,6 +21,7 @@ class AskQuestion extends Model
         'first_name' => 'required',
         'last_name' => 'required',
         'email' => 'required|email',
+        'phone' => 'required',
         'massage' => 'required'
     ];
 
@@ -28,6 +29,7 @@ class AskQuestion extends Model
         'first_name' => 'Имя',
         'last_name' => 'Фамилия',
         'email' => 'Email',
+        'phone' => 'Телефон',
         'massage' => 'Сообщение'
     ];
 
