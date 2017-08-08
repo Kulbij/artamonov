@@ -1,5 +1,6 @@
 <?php namespace Intertech\Forms\Models;
 
+use Flash;
 use Model;
 use October\Rain\Database\Traits\Validation;
 
@@ -68,4 +69,9 @@ class ProgramFeedback extends Model
     public $morphMany = [];
     public $attachOne = [];
     public $attachMany = [];
+
+    public function beforeSave()
+    {
+        Flash::success('Обратная связь программы была успешно сохранена');
+    }
 }
