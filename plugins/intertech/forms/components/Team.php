@@ -8,6 +8,7 @@ use Redirect;
 use Validator;
 use ValidationException;
 use Cms\Classes\ComponentBase;
+use System\Models\MailSetting;
 use Intertech\Forms\Models\Team as ModelTeam;
 use Intertech\Artemonovteam\Models\Category;
 use Intertech\Forms\Traits\ComponentsTrait;
@@ -84,7 +85,7 @@ class Team extends ComponentBase
             'team' => $team,
             'date' => Carbon::now()->format('Y-m-d H:i')
         ], function($message) use ($team) {
-            $message->to($team->email, $team->first_name . ' ' . $team->last_name)->subject('Хочу в команду');
+            $message->to($team->email, $team->first_name . ' ' . $team->last_name)->from(MailSetting::get('sender_email'), MailSetting::get('sender_name'))->subject('Хочу в команду');
         });
     }
 }

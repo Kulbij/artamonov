@@ -7,6 +7,7 @@ use Request;
 use Redirect;
 use Carbon\Carbon;
 use Cms\Classes\ComponentBase;
+use System\Models\MailSetting;
 use Intertech\Artemonovteam\Models\Program;
 use Intertech\Forms\Models\ProgramFeedback;
 use Intertech\Forms\Traits\ComponentsTrait;
@@ -90,7 +91,7 @@ class ProductFeedback extends ComponentBase
             'program' => $program,
             'date' => Carbon::now()->format('Y-m-d H:i')
         ], function($message) use ($team, $program) {
-            $message->to($team->email, $team->first_name . ' ' . $team->last_name)->subject($program->name);
+            $message->to($team->email, $team->first_name . ' ' . $team->last_name)->from(MailSetting::get('sender_email'), MailSetting::get('sender_name'))->subject($program->name);
         });
     }
 }

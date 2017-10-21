@@ -1,0 +1,3 @@
+User-agent: *
+Disallow: /
+Sitemap: http://artamonovteam.com/sitemap.xml
